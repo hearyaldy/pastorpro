@@ -9,18 +9,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #3a5cff;
-            --primary-light: #5a75ff;
+            --primary: #4a6bff;
+            --primary-light: #7187ff;
             --primary-dark: #2845cc;
-            --secondary: #764ba2;
-            --text-dark: #222;
-            --text-light: #666;
+            --secondary: #9b6dd1;
+            --text-dark: #eaeaea;
+            --text-light: #b0b0b0;
+            --dark-bg: #1a1a2e;
+            --dark-bg-light: #212340;
+            --dark-bg-lighter: #2a2a4a;
             --white: #fff;
             --light-bg: #f8f9fa;
-            --border: #e0e0e0;
+            --border: #333350;
             --transition: all 0.3s ease-out;
-            --shadow-sm: 0 2px 10px rgba(0,0,0,0.05);
-            --shadow-md: 0 5px 20px rgba(0,0,0,0.1);
+            --shadow-sm: 0 2px 10px rgba(0,0,0,0.2);
+            --shadow-md: 0 5px 20px rgba(0,0,0,0.3);
         }
 
         * {
@@ -34,24 +37,22 @@
         }
 
         body {
-            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.7;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
             color: var(--text-dark);
-            background-color: var(--light-bg);
+            background-color: var(--dark-bg);
+            margin: 0;
+            padding: 0;
             overflow-x: hidden;
-        }
 
         /* Navigation */
         nav {
-            background-color: var(--white);
-            padding: 1.2rem 0;
-            box-shadow: var(--shadow-sm);
+            background-color: var(--dark-bg-light);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             position: fixed;
             width: 100%;
             top: 0;
-            z-index: 1000;
-            transition: var(--transition);
-        }
+            z-index: 100;
 
         nav.scrolled {
             padding: 0.8rem 0;
@@ -71,15 +72,13 @@
             align-items: center;
         }
 
-        .logo {
+                .logo {
+            color: var(--primary-light);
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--primary);
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-        }
 
         .logo i {
             font-size: 1.8rem;
@@ -92,15 +91,14 @@
         }
 
         .nav-menu li a {
-            color: var(--text-dark);
+            color: var(--white);
             text-decoration: none;
             font-weight: 500;
-            transition: var(--transition);
+            transition: color 0.3s ease;
         }
 
-        .nav-menu li a:hover {
-            color: var(--primary);
-        }
+                .nav-menu li a:hover {
+            color: var(--primary-light);
 
         .mobile-menu-btn {
             display: none;
@@ -117,29 +115,14 @@
             min-height: calc(100vh - 200px);
         }
 
-        .privacy-container {
-            background-color: var(--white);
+        .privacy-content {
+            background-color: var(--dark-bg-lighter);
             border-radius: 10px;
-            box-shadow: var(--shadow-sm);
-            padding: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        h1 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 2.5rem;
-        }
-
-        h2 {
-            margin: 2rem 0 1rem;
-            color: var(--primary-dark);
-        }
-
-        h3 {
-            margin: 1.5rem 0 0.75rem;
-            color: var(--secondary);
-        }
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            margin-top: 40px;        h1, h2, h3 {
+            color: var(--white);
+            margin-top: 0;
 
         h4 {
             margin: 1rem 0 0.5rem;
@@ -188,9 +171,10 @@
 
         /* Footer */
         footer {
-            background-color: #212529;
-            color: var(--white);
-            padding: 3rem 0 1.5rem;
+            background-color: var(--dark-bg-light);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 60px;
         }
 
         .footer-container {

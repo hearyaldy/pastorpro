@@ -42,24 +42,11 @@
         body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
-            color: var(--text-dark);
-            background-color: var(--dark-bg);
+            color: var(--text-dark-on-light);
+            background-color: var(--light-bg);
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-
-        /* Navigation */
-        nav {
-            background-color: var(--dark-bg-light);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-
-        nav.scrolled {
-            padding: 0.8rem 0;
-            box-shadow: var(--shadow-md);
         }
 
         .container {
@@ -69,19 +56,37 @@
             padding: 0 15px;
         }
 
+        /* Navigation */
+        nav {
+            background-color: var(--dark-bg-light);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            transition: var(--transition);
+        }
+
+        nav.scrolled {
+            padding: 0.5rem 0;
+            box-shadow: var(--shadow-md);
+        }
+
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 70px;
         }
 
-                .logo {
+        .logo {
             color: var(--primary-light);
             font-size: 1.5rem;
             font-weight: 700;
             text-decoration: none;
             display: flex;
             align-items: center;
+        }
 
         .logo i {
             font-size: 1.8rem;
@@ -100,56 +105,75 @@
             transition: color 0.3s ease;
         }
 
-                .nav-menu li a:hover {
+        .nav-menu li a:hover {
             color: var(--primary-light);
+        }
 
         .mobile-menu-btn {
             display: none;
             background: none;
             border: none;
-            color: var(--text-dark);
+            color: var(--white);
             font-size: 1.5rem;
             cursor: pointer;
         }
 
         /* Main content */
         main {
-            padding-top: 100px;
+            padding-top: 70px;
             min-height: calc(100vh - 200px);
         }
-
-        .privacy-content {
-            background-color: var(--off-white);
+        
+        /* Sections */
+        section {
+            padding: 4rem 0;
+        }
+        .section-bg-dark { background-color: var(--dark-bg); }
+        .section-bg-light { background-color: var(--light-bg); }
+        .section-bg-lighter { background-color: var(--dark-bg-lighter); }
+        
+        .privacy-container {
+            background-color: var(--white);
             border-radius: 10px;
-            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-sm);
             padding: 40px;
-            margin-top: 40px;
-            color: var(--text-dark-on-light);        h1, h2, h3 {
+            margin: 40px 0;
+        }
+
+        h1, h2, h3 {
             color: var(--primary-dark);
             margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.5rem; }
 
         h4 {
             margin: 1rem 0 0.5rem;
-            color: var(--text-dark);
+            color: var(--text-dark-on-light);
         }
 
         p {
             margin-bottom: 1rem;
+            color: var(--text-dark-on-light);
         }
 
         ul {
             padding-left: 2rem;
             margin-bottom: 1.5rem;
+            color: var(--text-dark-on-light);
         }
 
         li {
             margin-bottom: 0.5rem;
+            color: var(--text-dark-on-light);
         }
 
         .privacy-section {
             margin-bottom: 2rem;
             padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid #e0e0e0;
         }
 
         .privacy-section:last-child {
@@ -273,7 +297,7 @@
                 top: 70px;
                 left: -100%;
                 flex-direction: column;
-                background-color: var(--white);
+                background-color: var(--dark-bg-light);
                 width: 100%;
                 padding: 1rem 0;
                 box-shadow: var(--shadow-md);
@@ -287,7 +311,7 @@
                 left: 0;
             }
 
-            .privacy-container {
+            .privacy-content {
                 padding: 1.5rem;
             }
 
@@ -320,8 +344,9 @@
 
     <!-- Main Content -->
     <main>
-        <div class="container">
-            <div class="privacy-container">
+        <section class="section-bg-light">
+            <div class="container">
+                <div class="privacy-container">
                 <h1>Privacy Policy for PastorPro</h1>
                 <p><strong>Effective Date:</strong> October 4, 2025</p>
 
@@ -421,13 +446,14 @@
                     <p>
                         <strong>Email:</strong> pastorprohhs@gmail.com<br>
                         <strong>Phone:</strong> +66 0835208597<br>
-                        <strong>Address:</strong>P.O. Box 07, 89257 Tamparuli, Sabah. Malaysia
+                        <strong>Address:</strong> P.O. Box 07, 89257 Tamparuli, Sabah. Malaysia
                     </p>
                 </div>
 
                 <a href="index.html" class="back-to-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
             </div>
         </div>
+        </section>
     </main>
 
     <!-- Footer -->

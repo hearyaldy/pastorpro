@@ -286,20 +286,32 @@
 
         /* Sections */
         section {
-            background: var(--dark-bg-lighter);
-            margin: 4rem 0;
-            padding: 4rem;
-            border-radius: 16px;
-            box-shadow: var(--shadow-sm);
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            padding: 6rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section-bg-dark {
+            background-color: var(--dark-bg);
             color: var(--text-dark-on-dark);
         }
         
-        section.light-section {
-            background: var(--off-white);
+        .section-bg-light {
+            background-color: var(--off-white);
             color: var(--text-dark-on-light);
+        }
+        
+        .section-bg-lighter {
+            background-color: var(--dark-bg-lighter);
+            color: var(--text-dark-on-dark);
         }
 
         section.visible {
@@ -1002,132 +1014,129 @@
         </div>
     </section>
 
-    <div class="container">
-        <section id="about" class="about-section light-section">
-            <h2 style="color: var(--primary-dark);">About PastorPro</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Pastor using digital tools">
+    <div class="main-content">
+        <section id="about" class="section-bg-light">
+            <div class="container">
+                <h2 style="color: var(--primary-dark);">About PastorPro</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Pastor using digital tools">
+                    </div>
+                    <div class="about-text">
+                        <h3 style="color: var(--primary-dark);">Version 2.0.0 - Complete UI/UX Overhaul</h3>
+                        <p style="color: var(--text-dark-on-light);"><strong>Release Date:</strong> October 1, 2025</p>
+                        <p style="color: var(--text-dark-on-light);">PastorPro is a comprehensive suite of ministry tools designed specifically for pastors and church leaders. Our mission is to help you manage your pastoral responsibilities more effectively, allowing you to focus on what matters most - shepherding your congregation and serving your community.</p>
+                        <p style="color: var(--text-dark-on-light);">Our latest major update brings significant improvements to the user interface, user experience, and overall app architecture:</p>
+                    </div>
                 </div>
-                <div class="about-text">
-                    <h3 style="color: var(--primary-dark);">Version 2.0.0 - Complete UI/UX Overhaul</h3>
-                    <p style="color: var(--text-dark-on-light);"><strong>Release Date:</strong> October 1, 2025</p>
-                    
-                    <p style="color: var(--text-dark-on-light);">PastorPro is a comprehensive suite of ministry tools designed specifically for pastors and church leaders. Our mission is to help you manage your pastoral responsibilities more effectively, allowing you to focus on what matters most - shepherding your congregation and serving your community.</p>
-                    
-                    <p style="color: var(--text-dark-on-light);">Our latest major update brings significant improvements to the user interface, user experience, and overall app architecture:</p>
+                <div class="feature-grid">
+                    <div class="feature-card" style="background-color: var(--white);">
+                        <div class="feature-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h4 style="color: var(--primary-dark);">Modern Theme System</h4>
+                        <p style="color: var(--text-dark-on-light);">Professional Navy Blue and Sky Blue palette with Material 3 Design implementation throughout the app. Consistent styling for all components and dark mode ready architecture.</p>
+                    </div>
+                    <div class="feature-card" style="background-color: var(--white);">
+                        <div class="feature-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h4 style="color: var(--primary-dark);">Enhanced Authentication</h4>
+                        <p style="color: var(--text-dark-on-light);">Modern login screen, user registration flow, remember me functionality, and password recovery. We've also fixed the logout error that was causing app crashes.</p>
+                        <img src="Screen Shoot/Screenshot_2025-10-05-13-42-36-592_com.haweeinc.pastor_report.jpg" alt="Authentication screen" class="feature-image">
+                    </div>
+                    <div class="feature-card" style="background-color: var(--white);">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4 style="color: var(--primary-dark);">Improved Navigation</h4>
+                        <p style="color: var(--text-dark-on-light);">New navigation pattern with Home and Profile tabs for easy access to all features. State preservation when switching between tabs and login prompts for protected features.</p>
+                        <img src="Screen Shoot/Screenshot_2025-10-05-13-41-56-602_com.haweeinc.pastor_report.jpg" alt="Navigation and profile" class="feature-image">
+                    </div>
                 </div>
+                <p style="margin-top: 2rem; color: var(--text-dark-on-light);">Whether you're preparing sermons, managing church events, tracking member engagement, or organizing outreach programs, PastorPro provides the digital tools you need to streamline your ministry operations.</p>
             </div>
-            
-            <div class="feature-grid">
-                <div class="feature-card" style="background-color: var(--white);">
-                    <div class="feature-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h4 style="color: var(--primary-dark);">Modern Theme System</h4>
-                    <p style="color: var(--text-dark-on-light);">Professional Navy Blue and Sky Blue palette with Material 3 Design implementation throughout the app. Consistent styling for all components and dark mode ready architecture.</p>
-                </div>
-                <div class="feature-card" style="background-color: var(--white);">
-                    <div class="feature-icon">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <h4 style="color: var(--primary-dark);">Enhanced Authentication</h4>
-                    <p style="color: var(--text-dark-on-light);">Modern login screen, user registration flow, remember me functionality, and password recovery. We've also fixed the logout error that was causing app crashes.</p>
-                    <img src="Screen Shoot/Screenshot_2025-10-05-13-42-36-592_com.haweeinc.pastor_report.jpg" alt="Authentication screen" class="feature-image">
-                </div>
-                <div class="feature-card" style="background-color: var(--white);">
-                    <div class="feature-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h4 style="color: var(--primary-dark);">Improved Navigation</h4>
-                    <p style="color: var(--text-dark-on-light);">New navigation pattern with Home and Profile tabs for easy access to all features. State preservation when switching between tabs and login prompts for protected features.</p>
-                    <img src="Screen Shoot/Screenshot_2025-10-05-13-41-56-602_com.haweeinc.pastor_report.jpg" alt="Navigation and profile" class="feature-image">
-                </div>
-            </div>
-            
-            <p style="margin-top: 2rem; color: var(--text-dark-on-light);">Whether you're preparing sermons, managing church events, tracking member engagement, or organizing outreach programs, PastorPro provides the digital tools you need to streamline your ministry operations.</p>
         </section>
 
-        <section id="features" class="features-section" style="background-color: var(--dark-bg);">
-            <h2 style="color: var(--white);">Features</h2>
-            <p class="section-intro" style="color: var(--text-light-on-dark);">Discover how PastorPro helps you simplify your ministry work with these powerful features:</p>
-            
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-building"></i>
+        <section id="features" class="section-bg-dark">
+            <div class="container">
+                <h2 style="color: var(--white);">Features</h2>
+                <p class="section-intro" style="color: var(--text-light-on-dark);">Discover how PastorPro helps you simplify your ministry work with these powerful features:</p>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3 style="color: var(--white);">Mission-Based Structure</h3>
+                        <p style="color: var(--text-light-on-dark);">Organize your ministry work by missions, regions, and districts. Create hierarchical relationships between missions and departments for better organization.</p>
+                        <img src="Screen Shoot/Screenshot_2025-10-05-13-42-05-562_com.haweeinc.pastor_report.jpg" alt="Organization structure" class="feature-image">
                     </div>
-                    <h3 style="color: var(--white);">Mission-Based Structure</h3>
-                    <p style="color: var(--text-light-on-dark);">Organize your ministry work by missions, regions, and districts. Create hierarchical relationships between missions and departments for better organization.</p>
-                    <img src="Screen Shoot/Screenshot_2025-10-05-13-42-05-562_com.haweeinc.pastor_report.jpg" alt="Organization structure" class="feature-image">
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-calendar-alt"></i>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3 style="color: var(--white);">Activities & Appointments</h3>
+                        <p style="color: var(--text-light-on-dark);">Track pastoral activities, appointments, and events in a unified calendar. Manage your schedule effectively with reminders and notifications.</p>
+                        <img src="Screen Shoot/Screenshot_2025-10-05-13-41-33-585_com.haweeinc.pastor_report.jpg" alt="Calendar and appointments" class="feature-image">
                     </div>
-                    <h3 style="color: var(--white);">Activities & Appointments</h3>
-                    <p style="color: var(--text-light-on-dark);">Track pastoral activities, appointments, and events in a unified calendar. Manage your schedule effectively with reminders and notifications.</p>
-                    <img src="Screen Shoot/Screenshot_2025-10-05-13-41-33-585_com.haweeinc.pastor_report.jpg" alt="Calendar and appointments" class="feature-image">
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-sitemap"></i>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <h3 style="color: var(--white);">Department Management</h3>
+                        <p style="color: var(--text-light-on-dark);">Manage church departments with customizable forms and reports. Create, edit, and organize departments across different missions.</p>
+                        <img src="Screen Shoot/Screenshot_2025-10-05-13-41-08-979_com.haweeinc.pastor_report.jpg" alt="Department management" class="feature-image">
                     </div>
-                    <h3 style="color: var(--white);">Department Management</h3>
-                    <p style="color: var(--text-light-on-dark);">Manage church departments with customizable forms and reports. Create, edit, and organize departments across different missions.</p>
-                    <img src="Screen Shoot/Screenshot_2025-10-05-13-41-08-979_com.haweeinc.pastor_report.jpg" alt="Department management" class="feature-image">
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-users-cog"></i>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users-cog"></i>
+                        </div>
+                        <h3>User & Role Management</h3>
+                        <p>Control access with detailed user roles and permissions. Assign administrators and manage team members across missions and departments.</p>
+                        <img src="Screen Shoot/Screenshot_2025-10-05-13-42-18-443_com.haweeinc.pastor_report.jpg" alt="User management" class="feature-image">
                     </div>
-                    <h3>User & Role Management</h3>
-                    <p>Control access with detailed user roles and permissions. Assign administrators and manage team members across missions and departments.</p>
-                    <img src="Screen Shoot/Screenshot_2025-10-05-13-42-18-443_com.haweeinc.pastor_report.jpg" alt="User management" class="feature-image">
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-tachometer-alt"></i>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <h3>Modern Dashboard</h3>
+                        <p>Access all features through an intuitive, responsive dashboard. Enjoy a beautiful UI with lazy authentication for better user experience.</p>
+                        <img src="Screen Shoot/Screenshot_2025-10-05-13-40-53-176_com.haweeinc.pastor_report.jpg" alt="Modern dashboard" class="feature-image">
                     </div>
-                    <h3>Modern Dashboard</h3>
-                    <p>Access all features through an intuitive, responsive dashboard. Enjoy a beautiful UI with lazy authentication for better user experience.</p>
-                    <img src="Screen Shoot/Screenshot_2025-10-05-13-40-53-176_com.haweeinc.pastor_report.jpg" alt="Modern dashboard" class="feature-image">
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-tasks"></i>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h3>Task Management</h3>
+                        <p>Create, assign, and track tasks related to your ministry. Set priorities, due dates, and monitor progress with the integrated todo system.</p>
+                        <img src="Screen Shoot/Screenshot_2025-10-05-13-41-00-716_com.haweeinc.pastor_report.jpg" alt="Task management" class="feature-image">
                     </div>
-                    <h3>Task Management</h3>
-                    <p>Create, assign, and track tasks related to your ministry. Set priorities, due dates, and monitor progress with the integrated todo system.</p>
-                    <img src="Screen Shoot/Screenshot_2025-10-05-13-41-00-716_com.haweeinc.pastor_report.jpg" alt="Task management" class="feature-image">
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Reports & Analytics</h3>
+                        <p>Generate comprehensive reports of ministry activities. Export data for presentations and analysis to support strategic planning.</p>
+                        <img src="Screen Shoot/Screenshot_2025-10-05-13-41-20-445_com.haweeinc.pastor_report.jpg" alt="Reports and analytics" class="feature-image">
                     </div>
-                    <h3>Reports & Analytics</h3>
-                    <p>Generate comprehensive reports of ministry activities. Export data for presentations and analysis to support strategic planning.</p>
-                    <img src="Screen Shoot/Screenshot_2025-10-05-13-41-20-445_com.haweeinc.pastor_report.jpg" alt="Reports and analytics" class="feature-image">
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-wifi"></i>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <h3>Offline Functionality</h3>
+                        <p>Access critical features even without internet connection. Data synchronizes automatically when connectivity is restored.</p>
+                        <img src="Screen Shoot/Screenshot_2025-10-05-13-42-45-341_com.haweeinc.pastor_report.jpg" alt="Offline functionality" class="feature-image">
                     </div>
-                    <h3>Offline Functionality</h3>
-                    <p>Access critical features even without internet connection. Data synchronizes automatically when connectivity is restored.</p>
-                    <img src="Screen Shoot/Screenshot_2025-10-05-13-42-45-341_com.haweeinc.pastor_report.jpg" alt="Offline functionality" class="feature-image">
                 </div>
             </div>
         </section>
         
-        <!-- Screenshot Gallery Section -->
-        <section id="app-gallery" class="screenshot-gallery light-section" style="background-color: var(--off-white);">
-            <div class="gallery-container">
+        <section id="app-gallery" class="section-bg-light">
+            <div class="container">
                 <div class="gallery-header">
                     <h2 style="color: var(--primary-dark);">Explore PastorPro</h2>
                     <p style="color: var(--text-dark-on-light);">Take a look at our beautiful, intuitive interface and powerful features</p>
                 </div>
-                
                 <div class="screenshots-slider" id="screenshotsSlider">
                     <div class="screenshot-item" data-index="0">
                         <img src="Screen Shoot/Screenshot_2025-10-05-13-40-53-176_com.haweeinc.pastor_report.jpg" alt="Dashboard Screen">
@@ -1151,7 +1160,6 @@
                         <img src="Screen Shoot/Screenshot_2025-10-05-13-41-56-602_com.haweeinc.pastor_report.jpg" alt="Profile Screen">
                     </div>
                 </div>
-                
                 <div class="screenshot-arrows">
                     <button class="arrow-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
                     <button class="arrow-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
@@ -1159,63 +1167,60 @@
             </div>
         </section>
 
-        <section id="download" style="background-color: var(--dark-bg-lighter);">
-            <div class="download-section">
-                <div class="container">
-                    <h2 style="color: var(--white);">Download PastorPro Today</h2>
-                    <p class="lead" style="color: var(--text-light-on-dark);">Get our application on your device and start managing your church responsibilities more effectively!</p>
-                    
-                    <div class="download-container">
-                        <div class="download-content">
-                            <div class="row" style="display: flex; flex-wrap: wrap; align-items: center;">
-                                <div class="col" style="flex: 1; min-width: 300px; padding: 1rem; text-align: left;">
-                                    <h3 style="color: var(--white);">Transform Your Ministry Work</h3>
-                                    <p style="color: var(--text-light-on-dark);">PastorPro brings modern tools to help you and your team manage church responsibilities with ease. Available on multiple platforms to ensure you can access your ministry tools wherever you are.</p>
-                                    <div class="app-benefits" style="margin-top: 1.5rem;">
-                                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                                            <i class="fas fa-check-circle" style="color: var(--primary-light); margin-right: 10px;"></i>
-                                            <span style="color: var(--text-light-on-dark);">Instant access to all church data</span>
-                                        </div>
-                                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                                            <i class="fas fa-check-circle" style="color: var(--primary-light); margin-right: 10px;"></i>
-                                            <span style="color: var(--text-light-on-dark);">Works offline with automatic syncing</span>
-                                        </div>
-                                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                                            <i class="fas fa-check-circle" style="color: var(--primary-light); margin-right: 10px;"></i>
-                                            <span style="color: var(--text-light-on-dark);">Free updates with new features</span>
-                                        </div>
+        <section id="download" class="section-bg-lighter">
+            <div class="container">
+                <h2 style="color: var(--white);">Download PastorPro Today</h2>
+                <p class="lead" style="color: var(--text-light-on-dark);">Get our application on your device and start managing your church responsibilities more effectively!</p>
+                <div class="download-container">
+                    <div class="download-content">
+                        <div class="row" style="display: flex; flex-wrap: wrap; align-items: center;">
+                            <div class="col" style="flex: 1; min-width: 300px; padding: 1rem; text-align: left;">
+                                <h3 style="color: var(--white);">Transform Your Ministry Work</h3>
+                                <p style="color: var(--text-light-on-dark);">PastorPro brings modern tools to help you and your team manage church responsibilities with ease. Available on multiple platforms to ensure you can access your ministry tools wherever you are.</p>
+                                <div class="app-benefits" style="margin-top: 1.5rem;">
+                                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                        <i class="fas fa-check-circle" style="color: var(--primary-light); margin-right: 10px;"></i>
+                                        <span style="color: var(--text-light-on-dark);">Instant access to all church data</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                        <i class="fas fa-check-circle" style="color: var(--primary-light); margin-right: 10px;"></i>
+                                        <span style="color: var(--text-light-on-dark);">Works offline with automatic syncing</span>
+                                    </div>
+                                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                        <i class="fas fa-check-circle" style="color: var(--primary-light); margin-right: 10px;"></i>
+                                        <span style="color: var(--text-light-on-dark);">Free updates with new features</span>
                                     </div>
                                 </div>
-                                <div class="col" style="flex: 1; min-width: 300px; padding: 1rem;">
-                                    <div class="platforms-mini">
-                                        <div class="platform-item">
-                                            <div class="platform-icon-wrapper">
-                                                <img src="app_icon.png" alt="PastorPro Android App" width="64" height="64">
-                                                <i class="fab fa-android" style="font-size: 24px; color: #3DDC84; position: absolute; bottom: -5px; right: -5px; background: white; border-radius: 50%; padding: 5px;"></i>
-                                            </div>
-                                            <p>Android</p>
-                                            <a href="https://play.google.com/store/apps/details?id=com.haweeinc.pastor_report" class="btn btn-sm btn-primary" style="padding: 0.4rem 1rem; font-size: 0.9rem;"><i class="fab fa-google-play"></i> Google Play</a>
+                            </div>
+                            <div class="col" style="flex: 1; min-width: 300px; padding: 1rem;">
+                                <div class="platforms-mini">
+                                    <div class="platform-item">
+                                        <div class="platform-icon-wrapper">
+                                            <img src="app_icon.png" alt="PastorPro Android App" width="64" height="64">
+                                            <i class="fab fa-android" style="font-size: 24px; color: #3DDC84; position: absolute; bottom: -5px; right: -5px; background: white; border-radius: 50%; padding: 5px;"></i>
                                         </div>
-                                        <div class="platform-item">
-                                            <div class="platform-icon-wrapper">
-                                                <img src="app_icon.png" alt="PastorPro iOS App" width="64" height="64">
-                                                <i class="fab fa-apple" style="font-size: 24px; color: #000; position: absolute; bottom: -5px; right: -5px; background: white; border-radius: 50%; padding: 5px;"></i>
-                                            </div>
-                                            <p>iOS</p>
-                                            <a href="https://apps.apple.com/app/pastorpro/id1234567890" class="btn btn-sm btn-secondary" style="padding: 0.4rem 1rem; font-size: 0.9rem;"><i class="fab fa-app-store-ios"></i> App Store</a>
-                                        </div>
-                                        <div class="platform-item">
-                                            <div class="platform-icon-wrapper">
-                                                <img src="app_icon.png" alt="PastorPro Desktop" width="64" height="64">
-                                                <i class="fas fa-laptop" style="font-size: 24px; color: #0078D7; position: absolute; bottom: -5px; right: -5px; background: white; border-radius: 50%; padding: 5px;"></i>
-                                            </div>
-                                            <p>Desktop</p>
-                                            <a href="download.html" class="btn btn-sm btn-outline" style="padding: 0.4rem 1rem; font-size: 0.9rem;"><i class="fas fa-download"></i> Download</a>
-                                        </div>
+                                        <p>Android</p>
+                                        <a href="https://play.google.com/store/apps/details?id=com.haweeinc.pastor_report" class="btn btn-sm btn-primary" style="padding: 0.4rem 1rem; font-size: 0.9rem;"><i class="fab fa-google-play"></i> Google Play</a>
                                     </div>
-                                    <div style="margin-top: 2rem;">
-                                        <a href="download.html" class="btn btn-lg btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem;"><i class="fas fa-download"></i> See All Download Options</a>
+                                    <div class="platform-item">
+                                        <div class="platform-icon-wrapper">
+                                            <img src="app_icon.png" alt="PastorPro iOS App" width="64" height="64">
+                                            <i class="fab fa-apple" style="font-size: 24px; color: #000; position: absolute; bottom: -5px; right: -5px; background: white; border-radius: 50%; padding: 5px;"></i>
+                                        </div>
+                                        <p>iOS</p>
+                                        <a href="https://apps.apple.com/app/pastorpro/id1234567890" class="btn btn-sm btn-secondary" style="padding: 0.4rem 1rem; font-size: 0.9rem;"><i class="fab fa-app-store-ios"></i> App Store</a>
                                     </div>
+                                    <div class="platform-item">
+                                        <div class="platform-icon-wrapper">
+                                            <img src="app_icon.png" alt="PastorPro Desktop" width="64" height="64">
+                                            <i class="fas fa-laptop" style="font-size: 24px; color: #0078D7; position: absolute; bottom: -5px; right: -5px; background: white; border-radius: 50%; padding: 5px;"></i>
+                                        </div>
+                                        <p>Desktop</p>
+                                        <a href="download.html" class="btn btn-sm btn-outline" style="padding: 0.4rem 1rem; font-size: 0.9rem;"><i class="fas fa-download"></i> Download</a>
+                                    </div>
+                                </div>
+                                <div style="margin-top: 2rem;">
+                                    <a href="download.html" class="btn btn-lg btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem;"><i class="fas fa-download"></i> See All Download Options</a>
                                 </div>
                             </div>
                         </div>
@@ -1224,15 +1229,17 @@
             </div>
         </section>
 
-        <section id="privacy" class="light-section" style="background-color: var(--off-white);">
-            <h2 style="color: var(--primary-dark);">Privacy Policy</h2>
-            <div class="privacy-section">
-                <p style="color: var(--text-dark-on-light);">We care about your privacy and data security. Our detailed privacy policy explains how we collect, use, and protect your information when you use the PastorPro application.</p>
-                <p style="color: var(--text-dark-on-light);">For the complete and up-to-date privacy policy, please visit our dedicated privacy policy page:</p>
-                <div class="cta-buttons" style="margin: 2rem 0;">
-                    <a href="privacy-policy.html" class="btn btn-primary"><i class="fas fa-shield-alt"></i> View Privacy Policy</a>
+        <section id="privacy" class="section-bg-light">
+            <div class="container">
+                <h2 style="color: var(--primary-dark);">Privacy Policy</h2>
+                <div class="privacy-section">
+                    <p style="color: var(--text-dark-on-light);">We care about your privacy and data security. Our detailed privacy policy explains how we collect, use, and protect your information when you use the PastorPro application.</p>
+                    <p style="color: var(--text-dark-on-light);">For the complete and up-to-date privacy policy, please visit our dedicated privacy policy page:</p>
+                    <div class="cta-buttons" style="margin: 2rem 0;">
+                        <a href="privacy-policy.html" class="btn btn-primary"><i class="fas fa-shield-alt"></i> View Privacy Policy</a>
+                    </div>
+                    <p style="color: var(--text-dark-on-light);"><strong>Last Updated:</strong> October 4, 2025</p>
                 </div>
-                <p style="color: var(--text-dark-on-light);"><strong>Last Updated:</strong> October 4, 2025</p>
             </div>
         </section>
     </div>

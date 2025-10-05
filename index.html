@@ -472,36 +472,258 @@
             }
         }
 
+        /* Screenshot Gallery */
+        .screenshot-gallery {
+            padding: 4rem 0;
+            background-color: #f8faff;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .screenshot-gallery::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(to bottom right, var(--primary) 0%, var(--secondary) 100%);
+            transform: skewY(-3deg);
+            z-index: 0;
+        }
+        
+        .gallery-container {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .gallery-header h2 {
+            color: var(--white);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .gallery-header p {
+            color: var(--white);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .screenshots-slider {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            padding: 2rem 0;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+            scroll-behavior: smooth;
+        }
+        
+        .screenshots-slider::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+        
+        .screenshot-item {
+            flex: 0 0 auto;
+            width: 250px;
+            height: 520px;
+            overflow: hidden;
+            border-radius: 25px;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            scroll-snap-align: center;
+            transition: var(--transition);
+            transform: scale(0.9);
+        }
+        
+        .screenshot-item.active {
+            transform: scale(1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .screenshot-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 25px;
+        }
+        
+        .phone-mockup {
+            position: relative;
+            width: 280px;
+            height: 550px;
+            margin: 0 auto;
+            background: #111;
+            border-radius: 36px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+        }
+        
+        .phone-mockup::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 150px;
+            height: 25px;
+            background: #111;
+            border-radius: 0 0 15px 15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 25px;
+        }
+        
+        .phone-screen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .screenshot-arrows {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .arrow-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            color: var(--primary);
+            font-size: 1.2rem;
+            border: none;
+        }
+        
+        .arrow-btn:hover {
+            background-color: var(--primary);
+            color: var(--white);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+        
+        /* Enhanced Hero Section */
+        .hero-app-showcase {
+            position: relative;
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .floating-phone {
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
         /* Download section */
         .download-section {
             text-align: center;
             margin-top: 2rem;
+            position: relative;
+            padding: 4rem 0;
         }
 
         .download-container {
             background-color: var(--white);
-            border-radius: 10px;
-            box-shadow: var(--shadow-sm);
-            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-md);
+            padding: 3rem 2rem;
             margin-top: 2rem;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .download-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, rgba(58, 92, 255, 0.05), rgba(118, 75, 162, 0.05));
+            transform: rotate(45deg);
+            z-index: 0;
+        }
+        
+        .download-content {
+            position: relative;
+            z-index: 1;
         }
 
         .platforms-mini {
             display: flex;
             justify-content: center;
             gap: 3rem;
-            margin-bottom: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
         }
 
         .platform-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.8rem;
+            transition: var(--transition);
+            padding: 1.5rem;
+            border-radius: 10px;
+            background-color: rgba(255,255,255,0.8);
+            box-shadow: var(--shadow-sm);
+            width: 160px;
+        }
+        
+        .platform-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
         }
 
         .platform-item i {
             color: var(--primary);
+            font-size: 2.5rem;
+        }
+        
+        .platform-item img {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .platform-item p {
+            font-weight: 600;
+            margin: 0;
         }
 
         /* Privacy section */
@@ -703,6 +925,7 @@
             <ul id="nav-menu">
                 <li><a href="#about">About</a></li>
                 <li><a href="#features">Features</a></li>
+                <li><a href="#app-gallery">Gallery</a></li>
                 <li><a href="download.html">Download</a></li>
                 <li><a href="privacy-policy.html">Privacy Policy</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -716,12 +939,27 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Ministry Tools for Modern Pastors</h1>
-            <p>Streamline your pastoral responsibilities with our comprehensive suite of digital tools designed specifically for church leaders.</p>
-            <div class="hero-buttons">
-                <a href="#features" class="btn btn-primary">Explore Features</a>
-                <a href="download.html" class="btn btn-secondary"><i class="fas fa-download"></i> Download App</a>
-                <a href="#about" class="btn btn-outline">Learn More</a>
+            <div class="row" style="display: flex; align-items: center; flex-wrap: wrap;">
+                <div class="col" style="flex: 1; min-width: 300px; padding: 1rem;">
+                    <h1>Ministry Tools for Modern Pastors</h1>
+                    <p>Streamline your pastoral responsibilities with our comprehensive suite of digital tools designed specifically for church leaders.</p>
+                    <div class="hero-buttons">
+                        <a href="#features" class="btn btn-primary">Explore Features</a>
+                        <a href="download.html" class="btn btn-secondary"><i class="fas fa-download"></i> Download App</a>
+                        <a href="#about" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                <div class="col" style="flex: 1; min-width: 300px; padding: 1rem;">
+                    <div class="hero-app-showcase">
+                        <div class="floating-phone">
+                            <div class="phone-mockup">
+                                <div class="phone-screen">
+                                    <img src="Screen Shoot/Screenshot_2025-10-05-13-40-53-176_com.haweeinc.pastor_report.jpg" alt="PastorPro App Dashboard">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -843,28 +1081,97 @@
                 </div>
             </div>
         </section>
+        
+        <!-- Screenshot Gallery Section -->
+        <section id="app-gallery" class="screenshot-gallery">
+            <div class="gallery-container">
+                <div class="gallery-header">
+                    <h2>Explore PastorPro</h2>
+                    <p>Take a look at our beautiful, intuitive interface and powerful features</p>
+                </div>
+                
+                <div class="screenshots-slider" id="screenshotsSlider">
+                    <div class="screenshot-item" data-index="0">
+                        <img src="Screen Shoot/Screenshot_2025-10-05-13-40-53-176_com.haweeinc.pastor_report.jpg" alt="Dashboard Screen">
+                    </div>
+                    <div class="screenshot-item" data-index="1">
+                        <img src="Screen Shoot/Screenshot_2025-10-05-13-41-00-716_com.haweeinc.pastor_report.jpg" alt="Task Management Screen">
+                    </div>
+                    <div class="screenshot-item" data-index="2">
+                        <img src="Screen Shoot/Screenshot_2025-10-05-13-41-08-979_com.haweeinc.pastor_report.jpg" alt="Department Management Screen">
+                    </div>
+                    <div class="screenshot-item" data-index="3">
+                        <img src="Screen Shoot/Screenshot_2025-10-05-13-41-20-445_com.haweeinc.pastor_report.jpg" alt="Reports Screen">
+                    </div>
+                    <div class="screenshot-item" data-index="4">
+                        <img src="Screen Shoot/Screenshot_2025-10-05-13-41-33-585_com.haweeinc.pastor_report.jpg" alt="Calendar Screen">
+                    </div>
+                    <div class="screenshot-item" data-index="5">
+                        <img src="Screen Shoot/Screenshot_2025-10-05-13-41-46-350_com.haweeinc.pastor_report.jpg" alt="Settings Screen">
+                    </div>
+                    <div class="screenshot-item" data-index="6">
+                        <img src="Screen Shoot/Screenshot_2025-10-05-13-41-56-602_com.haweeinc.pastor_report.jpg" alt="Profile Screen">
+                    </div>
+                </div>
+                
+                <div class="screenshot-arrows">
+                    <button class="arrow-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="arrow-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
 
         <section id="download">
-            <h2>Download PastorPro</h2>
             <div class="download-section">
-                <p>Get our application on your device and start managing your church responsibilities more effectively today!</p>
-                <div class="download-container">
-                    <div class="platforms-mini">
-                        <div class="platform-item">
-                            <i class="fab fa-android fa-2x"></i>
-                            <p>Android</p>
+                <div class="container">
+                    <h2>Download PastorPro Today</h2>
+                    <p class="lead">Get our application on your device and start managing your church responsibilities more effectively!</p>
+                    
+                    <div class="download-container">
+                        <div class="download-content">
+                            <div class="row" style="display: flex; flex-wrap: wrap; align-items: center;">
+                                <div class="col" style="flex: 1; min-width: 300px; padding: 1rem; text-align: left;">
+                                    <h3>Transform Your Ministry Work</h3>
+                                    <p>PastorPro brings modern tools to help you and your team manage church responsibilities with ease. Available on multiple platforms to ensure you can access your ministry tools wherever you are.</p>
+                                    <div class="app-benefits" style="margin-top: 1.5rem;">
+                                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                            <i class="fas fa-check-circle" style="color: var(--primary); margin-right: 10px;"></i>
+                                            <span>Instant access to all church data</span>
+                                        </div>
+                                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                            <i class="fas fa-check-circle" style="color: var(--primary); margin-right: 10px;"></i>
+                                            <span>Works offline with automatic syncing</span>
+                                        </div>
+                                        <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                                            <i class="fas fa-check-circle" style="color: var(--primary); margin-right: 10px;"></i>
+                                            <span>Free updates with new features</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col" style="flex: 1; min-width: 300px; padding: 1rem;">
+                                    <div class="platforms-mini">
+                                        <div class="platform-item">
+                                            <img src="app_icon.png" alt="PastorPro Android App" width="64" height="64">
+                                            <p>Android</p>
+                                            <a href="https://play.google.com/store/apps/details?id=com.pastorpro.app" class="btn btn-sm btn-primary" style="padding: 0.4rem 1rem; font-size: 0.9rem;"><i class="fab fa-google-play"></i> Google Play</a>
+                                        </div>
+                                        <div class="platform-item">
+                                            <img src="app_icon.png" alt="PastorPro iOS App" width="64" height="64">
+                                            <p>iOS</p>
+                                            <a href="https://apps.apple.com/app/pastorpro/id1234567890" class="btn btn-sm btn-secondary" style="padding: 0.4rem 1rem; font-size: 0.9rem;"><i class="fab fa-app-store-ios"></i> App Store</a>
+                                        </div>
+                                        <div class="platform-item">
+                                            <img src="app_icon.png" alt="PastorPro Desktop" width="64" height="64">
+                                            <p>Desktop</p>
+                                            <a href="download.html" class="btn btn-sm btn-outline" style="padding: 0.4rem 1rem; font-size: 0.9rem;"><i class="fas fa-laptop"></i> Download</a>
+                                        </div>
+                                    </div>
+                                    <div style="margin-top: 2rem;">
+                                        <a href="download.html" class="btn btn-lg btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem;"><i class="fas fa-download"></i> See All Download Options</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="platform-item">
-                            <i class="fab fa-apple fa-2x"></i>
-                            <p>iOS</p>
-                        </div>
-                        <div class="platform-item">
-                            <i class="fas fa-laptop fa-2x"></i>
-                            <p>Desktop</p>
-                        </div>
-                    </div>
-                    <div class="cta-buttons">
-                        <a href="download.html" class="btn btn-primary"><i class="fas fa-download"></i> Download Now</a>
                     </div>
                 </div>
             </div>

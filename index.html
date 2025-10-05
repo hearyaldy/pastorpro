@@ -5,224 +5,744 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PastorPro - Ministry Tools for Pastors to manage their church responsibilities effectively">
     <title>PastorPro - Ministry Tools for Pastor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #3a5cff;
+            --primary-light: #5a75ff;
+            --pri                <div cl                <div cl                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Reports & Analytics</h3>
+                    <p>Generate comprehensive reports of ministry activities. Export data for presentations and analysis to support strategic planning.</p>
+                    <img src="https://images.unsplash.com/photo-1560472355-109703aa3edc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Reports and analytics" class="feature-image">
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3>Offline Functionality</h3>
+                    <p>Access critical features even without internet connection. Data synchronizes automatically when connectivity is restored.</p>
+                    <img src="https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Offline functionality" class="feature-image">
+                </div>
+            </div>
+        </section>re-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Modern Dashboard</h3>
+                    <p>Access all features through an intuitive, responsive dashboard. Enjoy a beautiful UI with lazy authentication for better user experience.</p>
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Modern dashboard" class="feature-image">
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Task Management</h3>
+                    <p>Create, assign, and track tasks related to your ministry. Set priorities, due dates, and monitor progress with the integrated todo system.</p>
+                    <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Task management" class="feature-image">
+                </div>ture-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <h3>Department Management</h3>
+                    <p>Manage church departments with customizable forms and reports. Create, edit, and organize departments across different missions.</p>
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Department management" class="feature-image">
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h3>User & Role Management</h3>
+                    <p>Control access with detailed user roles and permissions. Assign administrators and manage team members across missions and departments.</p>
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="User and role management" class="feature-image">
+                </div>k: #2845cc;
+            --secondary: #764ba2;
+            --text-dark: #222;
+            --text-light: #666;
+            --white: #fff;
+            --light-bg: #f8f9fa;
+            --border: #e0e0e0;
+            --transition: all 0.3s ease-out;
+            --shadow-sm: 0 2px 10px rgba(0,0,0,0.05);
+            --shadow-md: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f5;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+            overflow-x: hidden;
         }
 
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
+        /* Navigation */
         nav {
-            background-color: #fff;
-            padding: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
+            background-color: var(--white);
+            padding: 1.2rem 0;
+            box-shadow: var(--shadow-sm);
+            position: fixed;
+            width: 100%;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        nav.scrolled {
+            padding: 0.8rem 0;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary);
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            justify-content: center;
-            gap: 2rem;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        /* Hero section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
+                        url('https://images.unsplash.com/photo-1490730141103-6cac27aaab94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            text-align: center;
+            padding: 12rem 2rem 8rem;
+            margin-top: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s forwards 0.3s;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(58, 92, 255, 0.4);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(58, 92, 255, 0.5);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+            margin-left: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--primary);
+        }
+
+        /* Container */
+        .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
-        nav a {
-            text-decoration: none;
-            color: #667eea;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #764ba2;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
+        /* Sections */
         section {
-            background: white;
-            margin: 2rem 0;
-            padding: 3rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            background: var(--white);
+            margin: 4rem 0;
+            padding: 4rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         h2 {
-            color: #667eea;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid #667eea;
+            color: var(--primary);
+            font-size: 2.3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 1rem;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), transparent);
+            border-radius: 4px;
         }
 
         h3 {
-            color: #764ba2;
-            font-size: 1.5rem;
-            margin-top: 2rem;
+            color: var(--secondary);
+            font-size: 1.6rem;
+            margin-top: 2.5rem;
             margin-bottom: 1rem;
+            font-weight: 600;
         }
 
+        p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Feature grid */
         .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
         }
 
         .feature-card {
-            padding: 1.5rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            opacity: 0.7;
         }
 
         .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-md);
         }
 
         .feature-card h3 {
             margin-top: 0;
-            color: #667eea;
+            color: var(--primary);
+            font-size: 1.4rem;
         }
 
-        ul {
-            margin-left: 2rem;
-            margin-top: 1rem;
+        .feature-card h4 {
+            color: var(--primary);
+            margin-top: 0;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
         }
 
-        ul li {
-            margin-bottom: 0.5rem;
+        .feature-card p {
+            color: var(--text-light);
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+            flex-grow: 1;
         }
 
-        footer {
-            background-color: #2c3e50;
-            color: white;
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+            color: var(--primary);
+            background: rgba(58, 92, 255, 0.1);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+        }
+        
+        .subscribe-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .subscribe-form input {
+            padding: 12px 15px;
+            border-radius: 5px;
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+        }
+        
+        .subscribe-form input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .subscribe-form .btn {
+            padding: 10px 15px;
+        }
+        
+        .feature-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.5s ease;
+        }
+        
+        .feature-card:hover .feature-image {
+            transform: scale(1.05);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .about-image {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.03);
+        }
+        
+        .section-intro {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
             text-align: center;
-            padding: 2rem 0;
-            margin-top: 3rem;
+            color: var(--text-light);
+        }
+        
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
         }
 
-        footer p {
-            opacity: 0.8;
+        /* Animation keyframes */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        a {
-            color: #667eea;
-        }
-
+        /* Privacy section */
         .privacy-section {
-            margin-top: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .privacy-section h4 {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: var(--white);
+            padding: 5rem 0 2rem;
+            margin-top: 5rem;
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-column h3 {
+            color: var(--white);
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            margin-top: 0;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--white);
+        }
+
+        .footer-column p, .footer-column a {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.8rem;
+            display: block;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column a:hover {
+            color: var(--white);
+            transform: translateX(5px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background-color: var(--white);
+            color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Media queries */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            section {
+                padding: 3rem;
+            }
         }
 
         @media (max-width: 768px) {
-            header h1 {
+            .nav-container {
+                padding: 0 1.5rem;
+            }
+            
+            nav ul {
+                position: fixed;
+                flex-direction: column;
+                background-color: var(--white);
+                width: 80%;
+                height: 100vh;
+                top: 0;
+                right: -100%;
+                padding: 5rem 2rem;
+                transition: var(--transition);
+                gap: 2rem;
+                box-shadow: var(--shadow-md);
+                z-index: 1001;
+            }
+            
+            nav ul.active {
+                right: 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                z-index: 1002;
+            }
+            
+            .hero {
+                padding: 10rem 1.5rem 6rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            section {
+                padding: 2.5rem 1.5rem;
+                margin: 2.5rem 0;
+            }
+            
+            h2 {
                 font-size: 2rem;
             }
-
-            nav ul {
-                flex-direction: column;
-                gap: 1rem;
+            
+            .btn-secondary {
+                margin-left: 0;
+                margin-top: 1rem;
             }
+            
+            .feature-grid {
+                gap: 1.5rem;
+            }
+            
+            .footer-content {
+                gap: 2rem;
+            }
+        }
 
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+            
+            .btn-secondary {
+                margin-left: 0;
+            }
+            
             section {
-                padding: 1.5rem;
-            }
-
-            .container {
-                padding: 1rem;
+                padding: 2rem 1.2rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>PastorPro</h1>
-        <p>Ministry Tools for Pastor</p>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#privacy">Privacy Policy</a></li>
-        </ul>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="https://img.icons8.com/fluency/96/church.png" alt="PastorPro Logo" class="logo-img">
+                <span class="logo-text">PastorPro</span>
+            </a>
+            <ul id="nav-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
     </nav>
 
-    <div class="container">
-        <section id="about">
-            <h2>About PastorPro</h2>
-            <div>
-                <h3 style="color: #667eea; margin-top: 0;">Version 2.0.0 - Complete UI/UX Overhaul</h3>
-                <p><strong>Release Date:</strong> October 1, 2025</p>
-                
-                <p>PastorPro is a comprehensive suite of ministry tools designed specifically for pastors and church leaders. Our mission is to help you manage your pastoral responsibilities more effectively, allowing you to focus on what matters most - shepherding your congregation and serving your community.</p>
-                
-                <p>Our latest major update brings significant improvements to the user interface, user experience, and overall app architecture:</p>
-                
-                <div class="feature-grid" style="margin-top: 1.5rem;">
-                    <div class="feature-card">
-                        <h4>🎨 Modern Theme System</h4>
-                        <p>Professional Navy Blue and Sky Blue palette with Material 3 Design implementation throughout the app. Consistent styling for all components and dark mode ready architecture.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h4>🔐 Enhanced Authentication</h4>
-                        <p>Modern login screen, user registration flow, remember me functionality, and password recovery. We've also fixed the logout error that was causing app crashes.</p>
-                    </div>
-                    <div class="feature-card">
-                        <h4>📱 Improved Navigation</h4>
-                        <p>New navigation pattern with Home and Profile tabs for easy access to all features. State preservation when switching between tabs and login prompts for protected features.</p>
-                    </div>
-                </div>
-                
-                <p style="margin-top: 1.5rem;">Whether you're preparing sermons, managing church events, tracking member engagement, or organizing outreach programs, PastorPro provides the digital tools you need to streamline your ministry operations.</p>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Ministry Tools for Modern Pastors</h1>
+            <p>Streamline your pastoral responsibilities with our comprehensive suite of digital tools designed specifically for church leaders.</p>
+            <div class="hero-buttons">
+                <a href="#features" class="btn btn-primary">Explore Features</a>
+                <a href="#about" class="btn btn-secondary">Learn More</a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="features">
-            <h2>Features</h2>
+    <div class="container">
+        <section id="about" class="about-section">
+            <h2>About PastorPro</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Pastor using digital tools">
+                </div>
+                <div class="about-text">
+                    <h3>Version 2.0.0 - Complete UI/UX Overhaul</h3>
+                    <p><strong>Release Date:</strong> October 1, 2025</p>
+                    
+                    <p>PastorPro is a comprehensive suite of ministry tools designed specifically for pastors and church leaders. Our mission is to help you manage your pastoral responsibilities more effectively, allowing you to focus on what matters most - shepherding your congregation and serving your community.</p>
+                    
+                    <p>Our latest major update brings significant improvements to the user interface, user experience, and overall app architecture:</p>
+                </div>
+            </div>
+            
             <div class="feature-grid">
                 <div class="feature-card">
-                    <h3>🏢 Mission-Based Structure</h3>
-                    <p>Organize your ministry work by missions, regions, and districts. Create hierarchical relationships between missions and departments for better organization.</p>
+                    <div class="feature-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h4>Modern Theme System</h4>
+                    <p>Professional Navy Blue and Sky Blue palette with Material 3 Design implementation throughout the app. Consistent styling for all components and dark mode ready architecture.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>📅 Activities & Appointments</h3>
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h4>Enhanced Authentication</h4>
+                    <p>Modern login screen, user registration flow, remember me functionality, and password recovery. We've also fixed the logout error that was causing app crashes.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h4>Improved Navigation</h4>
+                    <p>New navigation pattern with Home and Profile tabs for easy access to all features. State preservation when switching between tabs and login prompts for protected features.</p>
+                </div>
+            </div>
+            
+            <p style="margin-top: 2rem;">Whether you're preparing sermons, managing church events, tracking member engagement, or organizing outreach programs, PastorPro provides the digital tools you need to streamline your ministry operations.</p>
+        </section>
+
+        <section id="features" class="features-section">
+            <h2>Features</h2>
+            <p class="section-intro">Discover how PastorPro helps you simplify your ministry work with these powerful features:</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Mission-Based Structure</h3>
+                    <p>Organize your ministry work by missions, regions, and districts. Create hierarchical relationships between missions and departments for better organization.</p>
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Organization structure" class="feature-image">
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Activities & Appointments</h3>
                     <p>Track pastoral activities, appointments, and events in a unified calendar. Manage your schedule effectively with reminders and notifications.</p>
+                    <img src="https://images.unsplash.com/photo-1606988465874-38e4a509cc27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Calendar and appointments" class="feature-image">
                 </div>
                 <div class="feature-card">
                     <h3>� Department Management</h3>
@@ -372,9 +892,112 @@
         </section>
     </div>
 
-    <footer>
-        <p>&copy; 2024 PastorPro. All rights reserved.</p>
-        <p style="margin-top: 0.5rem;">Ministry Tools for Pastor</p>
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>PastorPro</h3>
+                    <p>Ministry tools designed specifically for pastors and church leaders, helping you focus on what matters most - shepherding your congregation.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="#about">About Us</a>
+                    <a href="#features">Features</a>
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#">Download App</a>
+                    <a href="#">Support</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:privacy@pastorpro.app">privacy@pastorpro.app</a></p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Ministry Lane, Suite 100, Tech City, TC 12345</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Subscribe</h3>
+                    <p>Get the latest updates and news.</p>
+                    <div class="subscribe-form">
+                        <input type="email" placeholder="Your email address">
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 PastorPro. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
+    <!-- JavaScript for interactive elements -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+        
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
+        }
+        
+        // Scroll animations
+        const navbar = document.getElementById('navbar');
+        const sections = document.querySelectorAll('section');
+        
+        // Add scrolled class to navbar on scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            // Reveal sections on scroll
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (sectionTop < windowHeight * 0.75) {
+                    section.classList.add('visible');
+                }
+            });
+        });
+        
+        // Initialize sections visibility
+        window.addEventListener('load', () => {
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (sectionTop < windowHeight * 0.75) {
+                    section.classList.add('visible');
+                }
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>

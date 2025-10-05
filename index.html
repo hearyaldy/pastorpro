@@ -11,7 +11,20 @@
         :root {
             --primary: #3a5cff;
             --primary-light: #5a75ff;
-            --pri                <div cl                <div cl                <div class="feature-card">
+            --primary-dark: #2845cc;
+            --secondary: #764ba2;
+            --text-dark: #222;
+            --text-light: #666;
+            --white: #fff;
+            --light-bg: #f8f9fa;
+            --border: #e0e0e0;
+            --transition: all 0.3s ease-out;
+            --shadow-sm: 0 2px 10px rgba(0,0,0,0.05);
+            --shadow-md: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Feature Card Section */
+        .feature-card
                     <div class="feature-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
@@ -176,7 +189,7 @@
 
         /* Hero section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
                         url('https://images.unsplash.com/photo-1490730141103-6cac27aaab94?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
@@ -686,6 +699,17 @@
 
         .platforms-mini {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+        
+        .platform-icon-wrapper {
+            position: relative;
+            width: 64px;
+            height: 64px;
+            margin-bottom: 5px;
+            display: flex;
             justify-content: center;
             gap: 3rem;
             margin: 2rem 0;
@@ -700,9 +724,10 @@
             transition: var(--transition);
             padding: 1.5rem;
             border-radius: 10px;
-            background-color: rgba(255,255,255,0.8);
+            background-color: rgba(255,255,255,0.95);
             box-shadow: var(--shadow-sm);
             width: 160px;
+            margin: 0 10px;
         }
         
         .platform-item:hover {
@@ -1151,19 +1176,28 @@
                                 <div class="col" style="flex: 1; min-width: 300px; padding: 1rem;">
                                     <div class="platforms-mini">
                                         <div class="platform-item">
-                                            <img src="app_icon.png" alt="PastorPro Android App" width="64" height="64">
+                                            <div class="platform-icon-wrapper">
+                                                <img src="app_icon.png" alt="PastorPro Android App" width="64" height="64">
+                                                <i class="fab fa-android" style="font-size: 24px; color: #3DDC84; position: absolute; bottom: -5px; right: -5px; background: white; border-radius: 50%; padding: 5px;"></i>
+                                            </div>
                                             <p>Android</p>
-                                            <a href="https://play.google.com/store/apps/details?id=com.pastorpro.app" class="btn btn-sm btn-primary" style="padding: 0.4rem 1rem; font-size: 0.9rem;"><i class="fab fa-google-play"></i> Google Play</a>
+                                            <a href="https://play.google.com/store/apps/details?id=com.haweeinc.pastor_report" class="btn btn-sm btn-primary" style="padding: 0.4rem 1rem; font-size: 0.9rem;"><i class="fab fa-google-play"></i> Google Play</a>
                                         </div>
                                         <div class="platform-item">
-                                            <img src="app_icon.png" alt="PastorPro iOS App" width="64" height="64">
+                                            <div class="platform-icon-wrapper">
+                                                <img src="app_icon.png" alt="PastorPro iOS App" width="64" height="64">
+                                                <i class="fab fa-apple" style="font-size: 24px; color: #000; position: absolute; bottom: -5px; right: -5px; background: white; border-radius: 50%; padding: 5px;"></i>
+                                            </div>
                                             <p>iOS</p>
                                             <a href="https://apps.apple.com/app/pastorpro/id1234567890" class="btn btn-sm btn-secondary" style="padding: 0.4rem 1rem; font-size: 0.9rem;"><i class="fab fa-app-store-ios"></i> App Store</a>
                                         </div>
                                         <div class="platform-item">
-                                            <img src="app_icon.png" alt="PastorPro Desktop" width="64" height="64">
+                                            <div class="platform-icon-wrapper">
+                                                <img src="app_icon.png" alt="PastorPro Desktop" width="64" height="64">
+                                                <i class="fas fa-laptop" style="font-size: 24px; color: #0078D7; position: absolute; bottom: -5px; right: -5px; background: white; border-radius: 50%; padding: 5px;"></i>
+                                            </div>
                                             <p>Desktop</p>
-                                            <a href="download.html" class="btn btn-sm btn-outline" style="padding: 0.4rem 1rem; font-size: 0.9rem;"><i class="fas fa-laptop"></i> Download</a>
+                                            <a href="download.html" class="btn btn-sm btn-outline" style="padding: 0.4rem 1rem; font-size: 0.9rem;"><i class="fas fa-download"></i> Download</a>
                                         </div>
                                     </div>
                                     <div style="margin-top: 2rem;">
@@ -1213,8 +1247,8 @@
                 </div>
                 <div class="footer-column">
                     <h3>Contact Us</h3>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:privacy@pastorpro.app">privacy@pastorpro.app</a></p>
-                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:pastorprohhs@gmail.com">pastorprohhs@gmail.com</a></p>
+                    <p><i class="fas fa-phone"></i> +66 0835208597</p>
                     <p><i class="fas fa-map-marker-alt"></i> 123 Ministry Lane, Suite 100, Tech City, TC 12345</p>
                 </div>
                 <div class="footer-column">

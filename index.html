@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PastorPro - Ministry Tools for Pastors to manage their church responsibilities effectively">
+    <title>PastorPro - Ministry Tools for Pastor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background-color: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #764ba2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            background: white;
+            margin: 2rem 0;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #667eea;
+        }
+
+        h3 {
+            color: #764ba2;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            padding: 1.5rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+        }
+
+        .feature-card h3 {
+            margin-top: 0;
+            color: #667eea;
+        }
+
+        ul {
+            margin-left: 2rem;
+            margin-top: 1rem;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        a {
+            color: #667eea;
+        }
+
+        .privacy-section {
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PastorPro</h1>
+        <p>Ministry Tools for Pastor</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#privacy">Privacy Policy</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="about">
+            <h2>About PastorPro</h2>
+            <p>PastorPro is a comprehensive suite of ministry tools designed specifically for pastors and church leaders. Our mission is to help you manage your pastoral responsibilities more effectively, allowing you to focus on what matters most - shepherding your congregation and serving your community.</p>
+            <p style="margin-top: 1rem;">Whether you're preparing sermons, managing church events, tracking member engagement, or organizing outreach programs, PastorPro provides the digital tools you need to streamline your ministry operations.</p>
+        </section>
+
+        <section id="features">
+            <h2>Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>📖 Sermon Management</h3>
+                    <p>Organize your sermons, notes, and scripture references in one place. Plan sermon series and track preaching schedules with ease.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>👥 Member Directory</h3>
+                    <p>Keep track of your congregation members, including contact information, attendance records, and pastoral care needs.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📅 Event Planning</h3>
+                    <p>Schedule and manage church events, services, and meetings. Send reminders and track attendance effortlessly.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🙏 Prayer Requests</h3>
+                    <p>Manage and organize prayer requests from your congregation. Keep track of answered prayers and follow up on ongoing needs.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📊 Ministry Analytics</h3>
+                    <p>Gain insights into church growth, attendance trends, and engagement metrics to inform your ministry decisions.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💬 Communication Tools</h3>
+                    <p>Stay connected with your congregation through integrated messaging, announcements, and newsletters.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="privacy">
+            <h2>Privacy Policy</h2>
+            <p><strong>Last Updated:</strong> October 2024</p>
+
+            <div class="privacy-section">
+                <h3>1. Introduction</h3>
+                <p>PastorPro ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application and related services (collectively, the "App").</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>2. Information We Collect</h3>
+                <p>We may collect the following types of information:</p>
+                <ul>
+                    <li><strong>Personal Information:</strong> Name, email address, phone number, and church affiliation that you provide when creating an account.</li>
+                    <li><strong>Church Member Information:</strong> Contact details, attendance records, and pastoral notes that you input into the App for ministry purposes.</li>
+                    <li><strong>Usage Data:</strong> Information about how you use the App, including access times, pages viewed, and app features used.</li>
+                    <li><strong>Device Information:</strong> Device type, operating system, unique device identifiers, and mobile network information.</li>
+                </ul>
+            </div>
+
+            <div class="privacy-section">
+                <h3>3. How We Use Your Information</h3>
+                <p>We use the information we collect to:</p>
+                <ul>
+                    <li>Provide, maintain, and improve the App's functionality</li>
+                    <li>Enable ministry management and pastoral care activities</li>
+                    <li>Send you technical notices, updates, and support messages</li>
+                    <li>Respond to your comments, questions, and requests</li>
+                    <li>Monitor and analyze trends, usage, and activities in connection with the App</li>
+                    <li>Detect, prevent, and address technical issues and security vulnerabilities</li>
+                </ul>
+            </div>
+
+            <div class="privacy-section">
+                <h3>4. Data Sharing and Disclosure</h3>
+                <p>We do not sell, trade, or rent your personal information to third parties. We may share your information only in the following circumstances:</p>
+                <ul>
+                    <li><strong>With Your Consent:</strong> We may share information with third parties when you give us explicit permission to do so.</li>
+                    <li><strong>Service Providers:</strong> We may share information with third-party service providers who perform services on our behalf, such as hosting, data analysis, and customer service.</li>
+                    <li><strong>Legal Requirements:</strong> We may disclose information if required by law or in response to valid legal requests.</li>
+                    <li><strong>Protection of Rights:</strong> We may disclose information to protect the rights, property, or safety of PastorPro, our users, or others.</li>
+                </ul>
+            </div>
+
+            <div class="privacy-section">
+                <h3>5. Data Security</h3>
+                <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>6. Data Retention</h3>
+                <p>We retain your personal information for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law. When you delete your account, we will delete your personal information within a reasonable timeframe, except where we are required to retain it for legal purposes.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>7. Your Rights and Choices</h3>
+                <p>You have the following rights regarding your personal information:</p>
+                <ul>
+                    <li><strong>Access:</strong> You can request access to the personal information we hold about you.</li>
+                    <li><strong>Correction:</strong> You can request correction of inaccurate or incomplete personal information.</li>
+                    <li><strong>Deletion:</strong> You can request deletion of your personal information, subject to certain exceptions.</li>
+                    <li><strong>Data Portability:</strong> You can request a copy of your personal information in a structured, machine-readable format.</li>
+                    <li><strong>Opt-Out:</strong> You can opt-out of receiving promotional communications from us.</li>
+                </ul>
+            </div>
+
+            <div class="privacy-section">
+                <h3>8. Children's Privacy</h3>
+                <p>The App is not intended for use by children under the age of 13. We do not knowingly collect personal information from children under 13. If we learn that we have collected personal information from a child under 13, we will take steps to delete such information as soon as possible.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>9. International Data Transfers</h3>
+                <p>Your information may be transferred to and processed in countries other than your country of residence. These countries may have different data protection laws. By using the App, you consent to the transfer of your information to these countries.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>10. Changes to This Privacy Policy</h3>
+                <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date. We encourage you to review this Privacy Policy periodically for any changes.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h3>11. Contact Us</h3>
+                <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us at:</p>
+                <p style="margin-top: 1rem;">
+                    <strong>Email:</strong> <a href="mailto:privacy@pastorpro.app">privacy@pastorpro.app</a><br>
+                    <strong>Repository:</strong> <a href="https://github.com/hearyaldy/pastorpro" target="_blank">github.com/hearyaldy/pastorpro</a>
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 PastorPro. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;">Ministry Tools for Pastor</p>
+    </footer>
+</body>
+</html>

@@ -13,13 +13,16 @@
             --primary-light: #7187ff;
             --primary-dark: #2845cc;
             --secondary: #9b6dd1;
-            --text-dark: #eaeaea;
-            --text-light: #b0b0b0;
+            --text-dark-on-light: #212340;
+            --text-light-on-light: #444;
+            --text-dark-on-dark: #eaeaea;
+            --text-light-on-dark: #b0b0b0;
             --dark-bg: #1a1a2e;
             --dark-bg-light: #212340;
             --dark-bg-lighter: #2a2a4a;
-            --white: #fff;
             --light-bg: #f8f9fa;
+            --off-white: #f2f2f2;
+            --white: #fff;
             --border: #333350;
             --transition: all 0.3s ease-out;
             --shadow-sm: 0 2px 10px rgba(0,0,0,0.2);
@@ -116,12 +119,13 @@
         }
 
         .privacy-content {
-            background-color: var(--dark-bg-lighter);
+            background-color: var(--off-white);
             border-radius: 10px;
-            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
             padding: 40px;
-            margin-top: 40px;        h1, h2, h3 {
-            color: var(--white);
+            margin-top: 40px;
+            color: var(--text-dark-on-light);        h1, h2, h3 {
+            color: var(--primary-dark);
             margin-top: 0;
 
         h4 {

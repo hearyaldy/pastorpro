@@ -1,15 +1,3 @@
-Absolutely! Below is the **fully cleaned and corrected version** of your HTML file. I've:
-
-- Fixed malformed CSS (removed duplicate `:root`, broken `.feature-card` definitions)
-- Removed all HTML fragments accidentally pasted inside the `<style>` block
-- Ensured proper structure and valid syntax
-- Preserved all your content, styles, images, and functionality
-
----
-
-### ✅ **Full Updated & Valid HTML Code**
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,19 +28,22 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             --shadow-sm: 0 2px 10px rgba(0,0,0,0.2);
             --shadow-md: 0 5px 20px rgba(0,0,0,0.3);
         }
-
+        
+        /* Basic styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         html {
             scroll-behavior: smooth;
         }
+
         body {
             font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.7;
-            color: var(--text-dark-on-dark);
+            color: var(--text-dark);
             background-color: var(--dark-bg);
             overflow-x: hidden;
         }
@@ -68,9 +59,11 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             z-index: 1000;
             transition: var(--transition);
         }
+
         nav.scrolled {
             padding: 0.8rem 0;
         }
+
         .nav-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -79,26 +72,31 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             align-items: center;
             padding: 0 2rem;
         }
+
         .logo {
             display: flex;
             align-items: center;
             gap: 0.8rem;
             text-decoration: none;
         }
+
         .logo-img {
             width: 40px;
             height: 40px;
         }
+
         .logo-text {
             font-weight: 700;
             font-size: 1.5rem;
             color: var(--primary);
         }
+
         nav ul {
             list-style: none;
             display: flex;
             gap: 2.5rem;
         }
+
         nav a {
             text-decoration: none;
             color: var(--white);
@@ -107,6 +105,7 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             transition: var(--transition);
             position: relative;
         }
+
         nav a::after {
             content: '';
             position: absolute;
@@ -117,19 +116,22 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             background-color: var(--primary);
             transition: var(--transition);
         }
+
         nav a:hover::after {
             width: 100%;
         }
+
         nav a:hover {
             color: var(--primary-light);
         }
+
         .mobile-menu-btn {
             display: none;
             background: none;
             border: none;
             cursor: pointer;
             font-size: 1.5rem;
-            color: var(--white);
+            color: var(--text-dark);
         }
 
         /* Hero section */
@@ -146,6 +148,7 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             position: relative;
             overflow: hidden;
         }
+
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
@@ -153,17 +156,20 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             transform: translateY(30px);
             animation: fadeInUp 1s forwards 0.3s;
         }
+
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
             font-weight: 700;
             line-height: 1.2;
         }
+
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
             opacity: 0.9;
         }
+
         .btn {
             display: inline-block;
             padding: 0.9rem 2.5rem;
@@ -174,33 +180,39 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             cursor: pointer;
             border: none;
         }
+
         .btn-primary {
             background-color: var(--primary);
             color: var(--white);
             box-shadow: 0 4px 15px rgba(58, 92, 255, 0.4);
         }
+
         .btn-primary:hover {
             background-color: var(--primary-dark);
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(58, 92, 255, 0.5);
         }
+
         .btn-secondary {
             background-color: var(--secondary);
             color: var(--white);
             border: 2px solid var(--secondary);
             margin-left: 1rem;
         }
+
         .btn-secondary:hover {
             background-color: var(--primary-dark);
             border-color: var(--primary-dark);
             transform: translateY(-3px);
         }
+
         .btn-outline {
             background-color: transparent;
             color: var(--white);
             border: 2px solid var(--white);
             margin-left: 1rem;
         }
+
         .btn-outline:hover {
             background-color: var(--white);
             color: var(--primary);
@@ -211,8 +223,6 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
-            position: relative;
-            z-index: 2;
         }
 
         /* Sections */
@@ -221,22 +231,35 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             position: relative;
             overflow: hidden;
         }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
         .section-bg-dark {
             background-color: var(--dark-bg);
             color: var(--text-dark-on-dark);
         }
+        
         .section-bg-light {
             background-color: var(--off-white);
             color: var(--text-dark-on-light);
         }
+        
         .section-bg-lighter {
             background-color: var(--dark-bg-lighter);
             color: var(--text-dark-on-dark);
         }
+
         section.visible {
             opacity: 1;
             transform: translateY(0);
         }
+
         h2 {
             color: var(--primary);
             font-size: 2.3rem;
@@ -246,6 +269,7 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             padding-bottom: 1rem;
             display: inline-block;
         }
+
         h2::after {
             content: '';
             position: absolute;
@@ -256,6 +280,7 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             background: linear-gradient(90deg, var(--primary), transparent);
             border-radius: 4px;
         }
+
         h3 {
             color: var(--secondary);
             font-size: 1.6rem;
@@ -263,8 +288,9 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             margin-bottom: 1rem;
             font-weight: 600;
         }
+
         p {
-            color: var(--text-light-on-dark);
+            color: var(--text-light);
             margin-bottom: 1.5rem;
         }
 
@@ -276,6 +302,7 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             margin-top: 3rem;
             padding: 1rem;
         }
+
         .feature-card {
             background: var(--dark-bg-light);
             padding: 2.5rem;
@@ -291,6 +318,7 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             overflow: hidden;
             margin: 0.5rem;
         }
+
         .feature-card::before {
             content: '';
             position: absolute;
@@ -301,22 +329,33 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             background: linear-gradient(to bottom, var(--primary), var(--secondary));
             opacity: 0.7;
         }
+
         .feature-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-md);
         }
+        
+        /* Special styling for white feature cards in about section */
         .section-bg-light .feature-card {
             box-shadow: var(--shadow-md);
             border: none;
         }
-        .feature-card h3,
-        .feature-card h4 {
+
+        .feature-card h3 {
             margin-top: 0;
             color: var(--primary);
             font-size: 1.4rem;
         }
+
+        .feature-card h4 {
+            color: var(--primary);
+            margin-top: 0;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
         .feature-card p {
-            color: var(--text-light-on-dark);
+            color: var(--text-light);
             margin-bottom: 1.5rem;
             font-size: 1rem;
             flex-grow: 1;
@@ -324,6 +363,7 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             max-width: 100%;
             overflow-wrap: break-word;
         }
+
         .feature-icon {
             font-size: 2.2rem;
             margin-bottom: 1.5rem;
@@ -336,13 +376,14 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             justify-content: center;
             border-radius: 14px;
         }
-
+        
         .subscribe-form {
             display: flex;
             flex-direction: column;
             gap: 10px;
             margin-top: 15px;
         }
+        
         .subscribe-form input {
             padding: 12px 15px;
             border-radius: 5px;
@@ -350,13 +391,15 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             background: rgba(255, 255, 255, 0.1);
             color: var(--white);
         }
+        
         .subscribe-form input::placeholder {
             color: rgba(255, 255, 255, 0.6);
         }
+        
         .subscribe-form .btn {
             padding: 10px 15px;
         }
-
+        
         .feature-image {
             width: 100%;
             height: 180px;
@@ -366,10 +409,11 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             margin-top: auto;
             margin-bottom: 0;
         }
+        
         .feature-card:hover .feature-image {
             transform: scale(1.05);
         }
-
+        
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -377,37 +421,58 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             margin-bottom: 3rem;
             align-items: start;
         }
+        
         .about-image {
             border-radius: 16px;
             overflow: hidden;
             box-shadow: var(--shadow-md);
         }
-        .about-text {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
+        
         .about-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
+        
         .about-image:hover img {
             transform: scale(1.03);
         }
+        
+        .about-text {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
         .section-intro {
             font-size: 1.1rem;
             max-width: 700px;
             margin: 0 auto 2rem;
             text-align: center;
-            color: var(--text-light-on-dark);
+            color: var(--text-light);
+        }
+        
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            section {
+                padding: 3rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 2.5rem;
+            }
         }
 
         @media (max-width: 768px) {
             .about-content {
                 grid-template-columns: 1fr;
             }
+            
             .feature-grid {
                 grid-template-columns: 1fr;
                 max-width: 500px;
@@ -416,10 +481,12 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
                 gap: 3rem;
                 padding: 0.5rem;
             }
+            
             .feature-card {
                 min-height: 480px;
                 margin: 0 0 1.5rem 0;
             }
+            
             .feature-image {
                 height: 180px;
             }
@@ -444,6 +511,7 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             position: relative;
             overflow: hidden;
         }
+        
         .screenshot-gallery::before {
             content: "";
             position: absolute;
@@ -455,6 +523,7 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             transform: skewY(-3deg);
             z-index: 0;
         }
+        
         .gallery-container {
             position: relative;
             z-index: 1;
@@ -462,15 +531,18 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             margin: 0 auto;
             padding: 0 20px;
         }
+        
         .gallery-header {
             text-align: center;
             margin-bottom: 3rem;
         }
+        
         .gallery-header h2 {
             color: var(--white);
             font-size: 2.5rem;
             margin-bottom: 1rem;
         }
+        
         .gallery-header p {
             color: var(--white);
             font-size: 1.2rem;
@@ -478,19 +550,22 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             margin: 0 auto;
             opacity: 0.9;
         }
+        
         .screenshots-slider {
             display: flex;
             gap: 1.5rem;
             overflow-x: auto;
             padding: 2rem 0;
             scroll-snap-type: x mandatory;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
             scroll-behavior: smooth;
         }
+        
         .screenshots-slider::-webkit-scrollbar {
-            display: none;
+            display: none; /* Chrome, Safari, Opera */
         }
+        
         .screenshot-item {
             flex: 0 0 auto;
             width: 250px;
@@ -503,17 +578,19 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             transition: var(--transition);
             transform: scale(0.9);
         }
+        
         .screenshot-item.active {
             transform: scale(1);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         }
+        
         .screenshot-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             border-radius: 25px;
         }
-
+        
         .phone-mockup {
             position: relative;
             width: 280px;
@@ -527,6 +604,7 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             justify-content: center;
             padding: 15px;
         }
+        
         .phone-mockup::before {
             content: '';
             position: absolute;
@@ -538,24 +616,27 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             left: 50%;
             transform: translateX(-50%);
         }
+        
         .phone-screen {
             width: 100%;
             height: 100%;
             overflow: hidden;
             border-radius: 25px;
         }
+        
         .phone-screen img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-
+        
         .screenshot-arrows {
             display: flex;
             justify-content: center;
             gap: 1.5rem;
             margin-top: 2rem;
         }
+        
         .arrow-btn {
             width: 50px;
             height: 50px;
@@ -571,13 +652,14 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             font-size: 1.2rem;
             border: none;
         }
+        
         .arrow-btn:hover {
             background-color: var(--primary);
             color: var(--white);
             box-shadow: var(--shadow-md);
             transform: translateY(-2px);
         }
-
+        
         /* Enhanced Hero Section */
         .hero-app-showcase {
             position: relative;
@@ -586,98 +668,129 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             align-items: center;
             justify-content: center;
         }
+        
         .floating-phone {
             position: relative;
             animation: float 6s ease-in-out infinite;
         }
+        
         @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
         }
-
-        /* Download section */
-        .download-section {
+        
+        /* Testimonials Section */
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .testimonials-header {
             text-align: center;
-            margin-top: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .testimonials-slider {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background: var(--dark-bg-lighter);
+            border-radius: 16px;
+            padding: 2rem;
             position: relative;
-            padding: 4rem 0;
-        }
-        .download-container {
-            background-color: var(--white);
-            border-radius: 15px;
-            box-shadow: var(--shadow-md);
-            padding: 3rem 2rem;
-            margin-top: 2rem;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-        .download-container::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, rgba(58, 92, 255, 0.05), rgba(118, 75, 162, 0.05));
-            transform: rotate(45deg);
-            z-index: 0;
-        }
-        .download-content {
-            position: relative;
-            z-index: 1;
-        }
-        .platforms-mini {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            gap: 20px;
-        }
-        .platform-icon-wrapper {
-            position: relative;
-            width: 64px;
-            height: 64px;
-            margin-bottom: 5px;
-            display: flex;
-            justify-content: center;
-        }
-        .platform-item {
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 0.8rem;
-            transition: var(--transition);
-            padding: 1.5rem;
-            border-radius: 10px;
-            background-color: rgba(33,35,64,0.95);
-            box-shadow: var(--shadow-sm);
-            width: 160px;
-            margin: 0 10px;
-            color: var(--text-dark-on-dark);
         }
-        .platform-item:hover {
-            transform: translateY(-5px);
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
             box-shadow: var(--shadow-md);
         }
-        .platform-item i {
+        
+        .testimonial-card::before {
+            content: '\201C';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(74, 107, 255, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        
+        .testimonial-content {
+            flex-grow: 1;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-content p {
+            color: var(--text-dark-on-dark);
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 3px solid var(--primary);
+        }
+        
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
             color: var(--primary);
-            font-size: 2.5rem;
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
         }
-        .platform-item img {
-            width: 64px;
-            height: 64px;
-            margin-bottom: 0.5rem;
-        }
-        .platform-item p {
-            font-weight: 600;
-            margin: 0;
+        
+        .author-info p {
+            color: var(--text-light-on-dark);
+            font-size: 0.9rem;
+            margin-bottom: 0;
         }
 
-        /* Privacy section */
         .privacy-section {
-            margin-top: 2.5rem;
+            padding: 3rem 0;
+            background-color: var(--light-bg);
         }
+
+        .privacy-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .privacy-section h3 {
+            color: var(--primary);
+            font-size: 1.6rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
         .privacy-section h4 {
             color: var(--secondary);
             font-size: 1.2rem;
@@ -693,12 +806,14 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             margin-top: 5rem;
             position: relative;
         }
+
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 3rem;
             margin-bottom: 4rem;
         }
+
         .footer-column h3 {
             color: var(--white);
             font-size: 1.3rem;
@@ -707,6 +822,7 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             position: relative;
             padding-bottom: 0.8rem;
         }
+
         .footer-column h3::after {
             content: '';
             position: absolute;
@@ -716,23 +832,26 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             height: 2px;
             background-color: var(--white);
         }
-        .footer-column p,
-        .footer-column a {
+
+        .footer-column p, .footer-column a {
             color: rgba(255, 255, 255, 0.8);
             margin-bottom: 0.8rem;
             display: block;
             text-decoration: none;
             transition: var(--transition);
         }
+
         .footer-column a:hover {
             color: var(--white);
             transform: translateX(5px);
         }
+
         .social-links {
             display: flex;
             gap: 1rem;
             margin-top: 1.5rem;
         }
+
         .social-links a {
             display: flex;
             align-items: center;
@@ -745,11 +864,13 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             color: var(--white);
             text-decoration: none;
         }
+
         .social-links a:hover {
             background-color: var(--white);
             color: var(--primary);
             transform: translateY(-5px);
         }
+
         .copyright {
             text-align: center;
             padding-top: 2rem;
@@ -762,119 +883,147 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             .hero h1 {
                 font-size: 2.8rem;
             }
+            
             section {
                 padding: 3rem;
             }
+            
             .feature-grid {
                 grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
                 gap: 2.5rem;
             }
         }
+
         @media (max-width: 768px) {
-            .nav-container {
-                padding: 0 1.5rem;
-            }
-            nav ul {
-                position: fixed;
-                flex-direction: column;
-                background-color: var(--dark-bg);
-                width: 80%;
-                height: 100vh;
-                top: 0;
-                right: -100%;
-                padding: 5rem 2rem;
-                transition: var(--transition);
-                gap: 2rem;
-                box-shadow: var(--shadow-md);
-                z-index: 1001;
-            }
-            nav ul.active {
-                right: 0;
-            }
             .mobile-menu-btn {
                 display: block;
-                z-index: 1002;
             }
-            .hero {
-                padding: 10rem 1.5rem 6rem;
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                flex-direction: column;
+                background-color: var(--dark-bg-light);
+                width: 100%;
+                text-align: center;
+                box-shadow: var(--shadow-md);
+                transition: var(--transition);
+                padding: 2rem 0;
+                z-index: 100;
+                height: calc(100vh - 70px);
+                overflow-y: auto;
             }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
             .hero h1 {
-                font-size: 2.3rem;
+                font-size: 2.2rem;
             }
-            .container {
-                padding: 0 1.5rem;
+            
+            .hero p {
+                font-size: 1rem;
             }
-            section {
-                padding: 2.5rem 1.5rem;
-                margin: 2.5rem 0;
+            
+            .btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
             }
-            h2 {
-                font-size: 2rem;
+            
+            .hero {
+                padding: 8rem 1rem 6rem;
             }
-            .btn-secondary {
-                margin-left: 0;
-                margin-top: 1rem;
+            
+            .about-content {
+                grid-template-columns: 1fr;
             }
+            
             .feature-grid {
-                gap: 1.5rem;
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+                gap: 3rem;
+                padding: 0.5rem;
             }
+            
+            .feature-card {
+                min-height: 480px;
+                margin: 0 0 1.5rem 0;
+            }
+            
+            .feature-image {
+                height: 180px;
+            }
+            
             .footer-content {
+                grid-template-columns: 1fr;
                 gap: 2rem;
             }
-        }
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 2rem;
+            
+            .testimonials-slider {
+                grid-template-columns: 1fr;
             }
+            
+            section {
+                padding: 4rem 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
             .btn {
                 display: block;
                 width: 100%;
                 margin-bottom: 1rem;
             }
-            .btn-secondary {
+            
+            .btn-secondary, .btn-outline {
                 margin-left: 0;
-            }
-            section {
-                padding: 2rem 1.2rem;
             }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav id="navbar">
+    <nav id="mainNav">
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <img src="app_icon.png" alt="PastorPro Logo" class="logo-img">
+                <img src="app_icon.png" alt="PastorPro" class="logo-img">
                 <span class="logo-text">PastorPro</span>
             </a>
-            <ul id="nav-menu">
-                <li><a href="#about">About</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#app-gallery">Gallery</a></li>
-                <li><a href="download.html">Download</a></li>
-                <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="mobile-menu-btn" id="mobile-menu-btn">
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
             </button>
+            <ul id="navMenu">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#app-gallery">App Gallery</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="privacy-policy.html">Privacy</a></li>
+            </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero">
         <div class="hero-content">
-            <div class="row" style="display: flex; align-items: center; flex-wrap: wrap;">
-                <div class="col" style="flex: 1; min-width: 300px; padding: 1rem;">
-                    <h1>Ministry Tools for Modern Pastors</h1>
-                    <p>Streamline your pastoral responsibilities with our comprehensive suite of digital tools designed specifically for church leaders.</p>
-                    <div class="hero-buttons">
-                        <a href="#features" class="btn btn-primary">Explore Features</a>
-                        <a href="download.html" class="btn btn-secondary"><i class="fas fa-download"></i> Download App</a>
-                        <a href="#about" class="btn btn-outline">Learn More</a>
-                    </div>
-                </div>
+            <h1>PastorPro: Ministry Tools for Pastors</h1>
+            <p>Streamline your ministry work with our comprehensive suite of digital tools designed specifically for pastors and church leaders.</p>
+            <div class="hero-buttons">
+                <a href="download.html" class="btn btn-primary">Download Now</a>
+                <a href="#features" class="btn btn-outline">Learn More</a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row" style="display: flex; flex-wrap: wrap; margin-top: 3rem;">
                 <div class="col" style="flex: 1; min-width: 300px; padding: 1rem;">
                     <div class="hero-app-showcase">
                         <div class="floating-phone">
@@ -891,7 +1040,6 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
     </section>
 
     <div class="main-content">
-        <!-- About Section -->
         <section id="about" class="section-bg-light">
             <div class="container">
                 <h2 style="color: var(--primary-dark);">About PastorPro</h2>
@@ -936,7 +1084,6 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
             </div>
         </section>
 
-        <!-- Features Section -->
         <section id="features" class="section-bg-dark">
             <div class="container">
                 <h2 style="color: var(--white);">Features</h2>
@@ -1009,8 +1156,7 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
                 </div>
             </div>
         </section>
-
-        <!-- Gallery Section -->
+        
         <section id="app-gallery" class="section-bg-light">
             <div class="container">
                 <div class="gallery-header">
@@ -1041,93 +1187,72 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
                     </div>
                 </div>
                 <div class="screenshot-arrows">
-                    <button class="arrow-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
-                    <button class="arrow-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+                    <button id="prevScreenshot" class="arrow-btn"><i class="fas fa-arrow-left"></i></button>
+                    <button id="nextScreenshot" class="arrow-btn"><i class="fas fa-arrow-right"></i></button>
                 </div>
             </div>
         </section>
-
-        <!-- Download Section -->
-        <section id="download" class="section-bg-lighter">
-            <div class="container">
-                <h2 style="color: var(--white);">Download PastorPro Today</h2>
-                <p class="lead" style="color: var(--text-light-on-dark);">Get our application on your device and start managing your church responsibilities more effectively!</p>
-                <div class="download-container">
-                    <div class="download-content">
-                        <div class="row" style="display: flex; flex-wrap: wrap; align-items: center;">
-                            <div class="col" style="flex: 1; min-width: 300px; padding: 1rem; text-align: left;">
-                                <h3 style="color: var(--white);">Transform Your Ministry Work</h3>
-                                <p style="color: var(--text-light-on-dark);">PastorPro brings modern tools to help you and your team manage church responsibilities with ease. Available on multiple platforms to ensure you can access your ministry tools wherever you are.</p>
-                                <div class="app-benefits" style="margin-top: 1.5rem;">
-                                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                                        <i class="fas fa-check-circle" style="color: var(--primary-light); margin-right: 10px;"></i>
-                                        <span style="color: var(--text-light-on-dark);">Instant access to all church data</span>
-                                    </div>
-                                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                                        <i class="fas fa-check-circle" style="color: var(--primary-light); margin-right: 10px;"></i>
-                                        <span style="color: var(--text-light-on-dark);">Works offline with automatic syncing</span>
-                                    </div>
-                                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                                        <i class="fas fa-check-circle" style="color: var(--primary-light); margin-right: 10px;"></i>
-                                        <span style="color: var(--text-light-on-dark);">Free updates with new features</span>
-                                    </div>
-                                </div>
+        
+        <section id="testimonials" class="section-bg-dark">
+            <div class="testimonials-container">
+                <div class="testimonials-header">
+                    <h2 style="color: var(--white);">What Pastors Are Saying</h2>
+                    <p style="color: var(--text-light-on-dark);">Hear from pastors and church leaders who use PastorPro daily</p>
+                </div>
+                <div class="testimonials-slider">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"PastorPro has completely transformed how I organize my ministry work. The ability to track all department activities in one place has been a game-changer for our church leadership team."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Pastor James Wilson">
                             </div>
-                            <div class="col" style="flex: 1; min-width: 300px; padding: 1rem;">
-                                <div class="platforms-mini">
-                                    <div class="platform-item">
-                                        <div class="platform-icon-wrapper">
-                                            <img src="app_icon.png" alt="PastorPro Android App" width="64" height="64">
-                                            <i class="fab fa-android" style="font-size: 24px; color: #3DDC84; position: absolute; bottom: -5px; right: -5px; background: white; border-radius: 50%; padding: 5px;"></i>
-                                        </div>
-                                        <p>Android</p>
-                                        <a href="https://play.google.com/store/apps/details?id=com.haweeinc.pastor_report" class="btn btn-sm btn-primary" style="padding: 0.4rem 1rem; font-size: 0.9rem;"><i class="fab fa-google-play"></i> Google Play</a>
-                                    </div>
-                                    <div class="platform-item">
-                                        <div class="platform-icon-wrapper">
-                                            <img src="app_icon.png" alt="PastorPro iOS App" width="64" height="64">
-                                            <i class="fab fa-apple" style="font-size: 24px; color: #000; position: absolute; bottom: -5px; right: -5px; background: white; border-radius: 50%; padding: 5px;"></i>
-                                        </div>
-                                        <p>iOS</p>
-                                        <a href="https://apps.apple.com/app/pastorpro/id1234567890" class="btn btn-sm btn-secondary" style="padding: 0.4rem 1rem; font-size: 0.9rem;"><i class="fab fa-app-store-ios"></i> App Store</a>
-                                    </div>
-                                    <div class="platform-item">
-                                        <div class="platform-icon-wrapper">
-                                            <img src="app_icon.png" alt="PastorPro Desktop" width="64" height="64">
-                                            <i class="fas fa-laptop" style="font-size: 24px; color: #0078D7; position: absolute; bottom: -5px; right: -5px; background: white; border-radius: 50%; padding: 5px;"></i>
-                                        </div>
-                                        <p>Desktop</p>
-                                        <a href="download.html" class="btn btn-sm btn-outline" style="padding: 0.4rem 1rem; font-size: 0.9rem;"><i class="fas fa-download"></i> Download</a>
-                                    </div>
-                                </div>
-                                <div style="margin-top: 2rem;">
-                                    <a href="download.html" class="btn btn-lg btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem;"><i class="fas fa-download"></i> See All Download Options</a>
-                                </div>
+                            <div class="author-info">
+                                <h4>Pastor James Wilson</h4>
+                                <p>Grace Community Church</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"The mission-based organization and offline functionality have been invaluable for our church's missionary work. I can access critical information even when I'm in areas with limited connectivity."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="https://randomuser.me/api/portraits/women/54.jpg" alt="Rev. Sarah Martinez">
+                            </div>
+                            <div class="author-info">
+                                <h4>Rev. Sarah Martinez</h4>
+                                <p>New Life Church</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"The reporting system has made our quarterly church meetings so much more efficient. With just a few clicks, I can generate detailed reports on all ministry activities and present them to our board."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-img">
+                                <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Pastor David Thompson">
+                            </div>
+                            <div class="author-info">
+                                <h4>Pastor David Thompson</h4>
+                                <p>Harvest Fellowship</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Privacy Section -->
-        <section id="privacy" class="section-bg-light">
-            <div class="container">
-                <h2 style="color: var(--primary-dark);">Privacy Policy</h2>
-                <div class="privacy-section">
-                    <p style="color: var(--text-dark-on-light);">We care about your privacy and data security. Our detailed privacy policy explains how we collect, use, and protect your information when you use the PastorPro application.</p>
-                    <p style="color: var(--text-dark-on-light);">For the complete and up-to-date privacy policy, please visit our dedicated privacy policy page:</p>
-                    <div class="cta-buttons" style="margin: 2rem 0;">
-                        <a href="privacy-policy.html" class="btn btn-primary"><i class="fas fa-shield-alt"></i> View Privacy Policy</a>
-                    </div>
-                    <p style="color: var(--text-dark-on-light);"><strong>Last Updated:</strong> October 4, 2025</p>
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="download.html" class="btn btn-primary">Try PastorPro Today</a>
                 </div>
             </div>
         </section>
     </div>
-
-    <!-- Footer -->
-    <footer id="contact">
+    
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
@@ -1142,25 +1267,17 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
                 </div>
                 <div class="footer-column">
                     <h3>Quick Links</h3>
-                    <a href="#about">About Us</a>
+                    <a href="index.html">Home</a>
                     <a href="#features">Features</a>
+                    <a href="#testimonials">Testimonials</a>
+                    <a href="download.html">Download</a>
                     <a href="privacy-policy.html">Privacy Policy</a>
-                    <a href="download.html">Download App</a>
-                    <a href="#contact">Contact</a>
                 </div>
                 <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:pastorprohhs@gmail.com">pastorprohhs@gmail.com</a></p>
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-envelope"></i> pastorprohhs@gmail.com</p>
                     <p><i class="fas fa-phone"></i> +66 0835208597</p>
-                    <p><i class="fas fa-map-marker-alt"></i>P.O. Box 07, 89257 Tamparuli, Sabah. Malaysia</p>
-                </div>
-                <div class="footer-column">
-                    <h3>Subscribe</h3>
-                    <p>Get the latest updates and news.</p>
-                    <div class="subscribe-form">
-                        <input type="email" placeholder="Your email address">
-                        <button type="submit" class="btn btn-primary">Subscribe</button>
-                    </div>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Main St, Anytown, CA 12345</p>
                 </div>
             </div>
             <div class="copyright">
@@ -1169,76 +1286,58 @@ Absolutely! Below is the **fully cleaned and corrected version** of your HTML fi
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
         // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const navMenu = document.getElementById('nav-menu');
-        if (mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-                mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
-                    ? '<i class="fas fa-times"></i>' 
-                    : '<i class="fas fa-bars"></i>';
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('active');
+            this.innerHTML = document.getElementById('navMenu').classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.getElementById('mainNav').classList.add('scrolled');
+            } else {
+                document.getElementById('mainNav').classList.remove('scrolled');
+            }
+        });
+        
+        // Screenshots slider
+        const screenshotsSlider = document.getElementById('screenshotsSlider');
+        const prevBtn = document.getElementById('prevScreenshot');
+        const nextBtn = document.getElementById('nextScreenshot');
+        const screenshots = document.querySelectorAll('.screenshot-item');
+        let currentIndex = 0;
+        
+        function updateSlider() {
+            screenshots.forEach((item, index) => {
+                if (index === currentIndex) {
+                    item.classList.add('active');
+                    item.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'nearest',
+                        inline: 'center'
+                    });
+                } else {
+                    item.classList.remove('active');
+                }
             });
         }
-
-        // Scroll animations
-        const navbar = document.getElementById('navbar');
-        const sections = document.querySelectorAll('section');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-
-            sections.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                if (sectionTop < windowHeight * 0.75) {
-                    section.classList.add('visible');
-                }
-            });
+        
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : screenshots.length - 1;
+            updateSlider();
         });
-
-        window.addEventListener('load', () => {
-            sections.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                if (sectionTop < windowHeight * 0.75) {
-                    section.classList.add('visible');
-                }
-            });
+        
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex < screenshots.length - 1) ? currentIndex + 1 : 0;
+            updateSlider();
         });
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                if (navMenu.classList.contains('active')) {
-                    navMenu.classList.remove('active');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                }
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
+        
+        // Initialize slider
+        screenshots[0].classList.add('active');
     </script>
 </body>
 </html>
-```
-
----
-
-✅ **You can now copy and paste this into your `.html` file** — it will render correctly in all modern browsers.
-
-Let me know if you'd like:
-- A downloadable `.html` file
-- Optimization for performance (e.g., lazy loading images)
-- Enhanced accessibility (ARIA labels, etc.)
-
-Happy coding! 🙏

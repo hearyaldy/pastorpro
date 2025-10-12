@@ -4,7 +4,7 @@
   <base href="./">
   
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="PastorPro Web App - A comprehensive ministry management tool for pastors to submit monthly reports, manage activities, and track ministry progress across different departments and missions.">
   
@@ -31,14 +31,19 @@
       --primary-light: #7187ff;
       --primary-dark: #2845cc;
       --secondary: #9b6dd1;
+      --accent: #00d4aa;
       --text-dark: #212340;
       --text-light: #444;
       --dark-bg: #1a1a2e;
       --dark-bg-light: #212340;
       --light-bg: #f8f9fa;
       --white: #fff;
-      --transition: all 0.3s ease-out;
-      --shadow-md: 0 5px 20px rgba(0,0,0,0.15);
+      --border-color: rgba(255, 255, 255, 0.1);
+      --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.15);
+      --shadow-heavy: 0 15px 35px rgba(0, 0, 0, 0.2);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --border-radius: 12px;
     }
 
     * {
@@ -47,74 +52,141 @@
       box-sizing: border-box;
     }
 
-    body {
-      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      line-height: 1.6;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      min-height: 100vh;
+    html, body {
+      height: 100%;
       overflow: hidden;
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--dark-bg);
+      color: var(--white);
     }
 
-    /* Loading Screen */
-    .loading-container {
+    /* Enhanced Loading Screen */
+    .loading-overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      z-index: 9999;
-      transition: opacity 0.5s ease-out;
+      z-index: 10000;
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .loading-container.hidden {
+    .loading-overlay.fade-out {
       opacity: 0;
+      transform: scale(1.1);
       pointer-events: none;
+    }
+
+    .loading-content {
+      text-align: center;
+      animation: slideInUp 1s ease-out;
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .app-logo-container {
+      position: relative;
+      margin-bottom: 2rem;
     }
 
     .app-logo {
       width: 120px;
       height: 120px;
-      margin-bottom: 2rem;
-      border-radius: 20px;
-      box-shadow: var(--shadow-md);
-      animation: float 3s ease-in-out infinite;
+      border-radius: 24px;
+      box-shadow: var(--shadow-heavy);
+      animation: logoFloat 4s ease-in-out infinite;
+      background: var(--white);
+      padding: 10px;
     }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
+    @keyframes logoFloat {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      25% { transform: translateY(-10px) rotate(1deg); }
+      50% { transform: translateY(-15px) rotate(0deg); }
+      75% { transform: translateY(-10px) rotate(-1deg); }
     }
 
-    .app-title {
-      color: var(--white);
-      font-size: 2.5rem;
+    .logo-glow {
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent));
+      border-radius: 34px;
+      opacity: 0.3;
+      animation: glowPulse 2s ease-in-out infinite alternate;
+      z-index: -1;
+    }
+
+    @keyframes glowPulse {
+      from { transform: scale(1); opacity: 0.3; }
+      to { transform: scale(1.1); opacity: 0.6; }
+    }
+
+    .loading-title {
+      font-size: 3rem;
       font-weight: 700;
+      color: var(--white);
       margin-bottom: 0.5rem;
-      text-align: center;
+      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      animation: titleGlow 3s ease-in-out infinite alternate;
     }
 
-    .app-subtitle {
+    @keyframes titleGlow {
+      from { text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); }
+      to { text-shadow: 0 4px 20px rgba(255, 255, 255, 0.3); }
+    }
+
+    .loading-subtitle {
+      font-size: 1.3rem;
       color: rgba(255, 255, 255, 0.9);
-      font-size: 1.2rem;
-      font-weight: 400;
       margin-bottom: 3rem;
-      text-align: center;
+      font-weight: 400;
     }
 
-    /* Loading Animation */
-    .loading-spinner {
-      width: 60px;
-      height: 60px;
-      border: 4px solid rgba(255, 255, 255, 0.3);
-      border-top: 4px solid var(--white);
+    /* Enhanced Loading Animation */
+    .loading-animation {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 2rem;
+    }
+
+    .loading-ring {
+      position: absolute;
+      width: 100%;
+      height: 100%;
       border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin-bottom: 1.5rem;
+      border: 3px solid transparent;
+      border-top-color: var(--white);
+      animation: spin 1.2s linear infinite;
+    }
+
+    .loading-ring:nth-child(2) {
+      border-top-color: var(--accent);
+      animation-delay: -0.4s;
+      transform: scale(0.8);
+    }
+
+    .loading-ring:nth-child(3) {
+      border-top-color: var(--primary-light);
+      animation-delay: -0.8s;
+      transform: scale(0.6);
     }
 
     @keyframes spin {
@@ -124,101 +196,161 @@
 
     .loading-text {
       color: var(--white);
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       font-weight: 500;
       margin-bottom: 0.5rem;
+      animation: textPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes textPulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
     }
 
     .loading-progress {
       color: rgba(255, 255, 255, 0.8);
-      font-size: 0.9rem;
+      font-size: 1rem;
+      font-weight: 400;
     }
 
-    /* Web App Header */
-    .web-app-header {
+    /* Enhanced Web App Header */
+    .web-header {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
-      height: 70px;
-      background: var(--dark-bg-light);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      height: 80px;
+      background: rgba(26, 26, 46, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-color);
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 2rem;
-      z-index: 1000;
+      z-index: 9999;
       opacity: 0;
-      transition: opacity 0.5s ease-out;
+      transform: translateY(-100%);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .web-app-header.visible {
+    .web-header.visible {
       opacity: 1;
+      transform: translateY(0);
     }
 
-    .header-left {
+    .header-brand {
       display: flex;
       align-items: center;
       gap: 1rem;
+      text-decoration: none;
+      color: var(--white);
     }
 
     .header-logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 8px;
+      width: 48px;
+      height: 48px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-light);
+      transition: var(--transition);
+    }
+
+    .header-logo:hover {
+      transform: scale(1.05);
+      box-shadow: var(--shadow-medium);
     }
 
     .header-title {
-      color: var(--white);
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-weight: 600;
+      background: linear-gradient(135deg, var(--primary-light), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
-    .header-right {
+    .header-nav {
       display: flex;
       align-items: center;
       gap: 1rem;
     }
 
-    .header-btn {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: var(--white);
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
+    .nav-btn {
+      padding: 0.6rem 1.2rem;
+      border-radius: 50px;
       text-decoration: none;
-      font-size: 0.9rem;
+      font-weight: 500;
+      font-size: 0.95rem;
       transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid var(--border-color);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
     }
 
-    .header-btn:hover {
-      background: rgba(255, 255, 255, 0.2);
+    .nav-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transition: left 0.5s;
+    }
+
+    .nav-btn:hover::before {
+      left: 100%;
+    }
+
+    .nav-btn:hover {
       transform: translateY(-2px);
+      box-shadow: var(--shadow-medium);
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--primary-light);
+    }
+
+    .nav-btn.primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      border-color: var(--primary);
+      color: var(--white);
+    }
+
+    .nav-btn.primary:hover {
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+      box-shadow: 0 8px 25px rgba(74, 107, 255, 0.3);
     }
 
     /* Flutter App Container */
-    .flutter-container {
+    .flutter-app {
       position: absolute;
-      top: 70px;
+      top: 80px;
       left: 0;
       right: 0;
       bottom: 0;
       opacity: 0;
-      transition: opacity 0.5s ease-out;
+      transition: opacity 0.6s ease-out;
+      background: var(--white);
+      border-radius: 16px 16px 0 0;
+      overflow: hidden;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
     }
 
-    .flutter-container.visible {
+    .flutter-app.visible {
       opacity: 1;
     }
 
-    /* Error State */
-    .error-container {
+    /* Enhanced Error State */
+    .error-screen {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: var(--dark-bg);
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       display: none;
       flex-direction: column;
       justify-content: center;
@@ -229,31 +361,43 @@
     }
 
     .error-icon {
-      font-size: 4rem;
+      font-size: 5rem;
       color: #ff6b6b;
       margin-bottom: 2rem;
+      animation: errorShake 0.5s ease-in-out;
+    }
+
+    @keyframes errorShake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-10px); }
+      75% { transform: translateX(10px); }
     }
 
     .error-title {
+      font-size: 2.5rem;
+      font-weight: 700;
       color: var(--white);
-      font-size: 2rem;
-      font-weight: 600;
       margin-bottom: 1rem;
     }
 
     .error-message {
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 1.1rem;
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.9);
       max-width: 600px;
       margin-bottom: 2rem;
       line-height: 1.6;
     }
 
-    .retry-btn {
-      background: var(--primary);
-      color: var(--white);
-      border: none;
+    .error-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .action-btn {
       padding: 1rem 2rem;
+      border: none;
       border-radius: 50px;
       font-size: 1.1rem;
       font-weight: 600;
@@ -263,229 +407,378 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
+      min-width: 180px;
+      justify-content: center;
     }
 
-    .retry-btn:hover {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
+    .action-btn.primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: var(--white);
+    }
+
+    .action-btn.secondary {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .action-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-medium);
     }
 
     /* Responsive Design */
     @media (max-width: 768px) {
-      .web-app-header {
+      .web-header {
         padding: 0 1rem;
+        height: 70px;
       }
 
-      .app-title {
-        font-size: 2rem;
-      }
-
-      .app-subtitle {
-        font-size: 1rem;
+      .flutter-app {
+        top: 70px;
       }
 
       .header-title {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
       }
 
-      .header-right {
-        gap: 0.5rem;
+      .nav-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
       }
 
-      .header-btn {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.8rem;
+      .loading-title {
+        font-size: 2.2rem;
+      }
+
+      .loading-subtitle {
+        font-size: 1.1rem;
+      }
+
+      .error-title {
+        font-size: 2rem;
+      }
+
+      .error-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .action-btn {
+        width: 100%;
+        max-width: 280px;
       }
     }
 
-    /* Flutter Loading Override */
+    @media (max-width: 480px) {
+      .web-header {
+        padding: 0 1rem;
+      }
+
+      .header-nav {
+        gap: 0.5rem;
+      }
+
+      .nav-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+      }
+
+      .nav-btn span {
+        display: none;
+      }
+
+      .loading-title {
+        font-size: 1.8rem;
+      }
+
+      .app-logo {
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    /* Performance optimizations */
+    .flutter-app canvas {
+      display: block;
+    }
+
+    /* Hide default Flutter loading */
     .loading {
-      display: none;
+      display: none !important;
+    }
+
+    flt-glass-pane {
+      position: relative !important;
     }
   </style>
 </head>
 <body>
-  <!-- Loading Screen -->
-  <div id="loadingContainer" class="loading-container">
-    <img src="favicon.png" alt="PastorPro Logo" class="app-logo" onerror="this.style.display='none'">
-    <h1 class="app-title">PastorPro</h1>
-    <p class="app-subtitle">Ministry Management Web App</p>
-    <div class="loading-spinner"></div>
-    <div class="loading-text">Loading your ministry tools...</div>
-    <div class="loading-progress">Please wait while we prepare your dashboard</div>
+  <!-- Enhanced Loading Overlay -->
+  <div id="loadingOverlay" class="loading-overlay">
+    <div class="loading-content">
+      <div class="app-logo-container">
+        <div class="logo-glow"></div>
+        <img src="favicon.png" alt="PastorPro Logo" class="app-logo" onerror="this.style.display='none'">
+      </div>
+      <h1 class="loading-title">PastorPro</h1>
+      <p class="loading-subtitle">Ministry Management Web Application</p>
+      <div class="loading-animation">
+        <div class="loading-ring"></div>
+        <div class="loading-ring"></div>
+        <div class="loading-ring"></div>
+      </div>
+      <div class="loading-text">Initializing your ministry dashboard...</div>
+      <div class="loading-progress">Please wait while we load your tools</div>
+    </div>
   </div>
 
-  <!-- Web App Header -->
-  <header id="webAppHeader" class="web-app-header">
-    <div class="header-left">
+  <!-- Enhanced Web Header -->
+  <header id="webHeader" class="web-header">
+    <a href="../index.html" class="header-brand">
       <img src="favicon.png" alt="PastorPro" class="header-logo" onerror="this.style.display='none'">
       <span class="header-title">PastorPro Web</span>
-    </div>
-    <div class="header-right">
-      <a href="../index.html" class="header-btn">
-        <i class="fas fa-home"></i> Back to Website
+    </a>
+    <nav class="header-nav">
+      <a href="../index.html" class="nav-btn">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
       </a>
-      <a href="../download.html" class="header-btn">
-        <i class="fas fa-download"></i> Download App
+      <a href="../download.html" class="nav-btn primary">
+        <i class="fas fa-download"></i>
+        <span>Get App</span>
       </a>
-    </div>
+    </nav>
   </header>
 
   <!-- Flutter App Container -->
-  <div id="flutterContainer" class="flutter-container">
-    <!-- Flutter app will load here -->
-  </div>
+  <main id="flutterApp" class="flutter-app">
+    <!-- Flutter content will be injected here -->
+  </main>
 
-  <!-- Error State -->
-  <div id="errorContainer" class="error-container">
+  <!-- Enhanced Error Screen -->
+  <div id="errorScreen" class="error-screen">
     <i class="fas fa-exclamation-triangle error-icon"></i>
-    <h2 class="error-title">Unable to Load PastorPro</h2>
+    <h2 class="error-title">Application Loading Error</h2>
     <p class="error-message">
-      We're having trouble loading the web application. This might be due to your browser compatibility 
-      or network connectivity. Please try refreshing the page or downloading our mobile app instead.
+      We're experiencing difficulties loading the PastorPro web application. This could be due to 
+      network connectivity issues or browser compatibility. Please try one of the options below.
     </p>
-    <a href="#" class="retry-btn" onclick="location.reload()">
-      <i class="fas fa-redo"></i> Try Again
-    </a>
-    <br><br>
-    <a href="../download.html" class="retry-btn" style="background: var(--secondary);">
-      <i class="fas fa-mobile-alt"></i> Download Mobile App
-    </a>
+    <div class="error-actions">
+      <button class="action-btn primary" onclick="location.reload()">
+        <i class="fas fa-redo"></i>
+        Retry Loading
+      </button>
+      <a href="../download.html" class="action-btn secondary">
+        <i class="fas fa-mobile-alt"></i>
+        Download Mobile App
+      </a>
+    </div>
   </div>
 
-  <!-- Flutter Bootstrap Script -->
+  <!-- Flutter Bootstrap -->
   <script src="flutter_bootstrap.js" async></script>
   
-  <!-- Custom Web App Script -->
+  <!-- Enhanced Web App Controller -->
   <script>
-    // Loading management
-    let loadingTimeout;
-    let appLoaded = false;
+    class PastorProWebApp {
+      constructor() {
+        this.loadingTimeout = null;
+        this.isAppLoaded = false;
+        this.loadStartTime = Date.now();
+        this.retryCount = 0;
+        this.maxRetries = 3;
+        
+        this.initializeApp();
+      }
 
-    // Show loading screen
-    function showLoading() {
-      document.getElementById('loadingContainer').classList.remove('hidden');
-      document.getElementById('webAppHeader').classList.remove('visible');
-      document.getElementById('flutterContainer').classList.remove('visible');
-      document.getElementById('errorContainer').style.display = 'none';
-    }
+      initializeApp() {
+        console.log('🚀 Initializing PastorPro Web App...');
+        
+        // Show loading screen
+        this.showLoading();
+        
+        // Set up loading timeout
+        this.setupLoadingTimeout();
+        
+        // Wait for Flutter initialization
+        this.waitForFlutter();
+        
+        // Setup error handling
+        this.setupErrorHandling();
+        
+        // Handle page visibility changes
+        this.handleVisibilityChange();
+      }
 
-    // Hide loading screen and show app
-    function hideLoadingShowApp() {
-      if (appLoaded) return;
-      appLoaded = true;
-      
-      setTimeout(() => {
-        document.getElementById('loadingContainer').classList.add('hidden');
-        document.getElementById('webAppHeader').classList.add('visible');
-        document.getElementById('flutterContainer').classList.add('visible');
-      }, 500);
-    }
+      showLoading() {
+        const loading = document.getElementById('loadingOverlay');
+        const header = document.getElementById('webHeader');
+        const app = document.getElementById('flutterApp');
+        const error = document.getElementById('errorScreen');
+        
+        loading.classList.remove('fade-out');
+        header.classList.remove('visible');
+        app.classList.remove('visible');
+        error.style.display = 'none';
+      }
 
-    // Show error state
-    function showError() {
-      document.getElementById('loadingContainer').classList.add('hidden');
-      document.getElementById('webAppHeader').classList.remove('visible');
-      document.getElementById('flutterContainer').classList.remove('visible');
-      document.getElementById('errorContainer').style.display = 'flex';
-    }
-
-    // Initialize loading timeout
-    function initLoadingTimeout() {
-      // Set a timeout to show error if app doesn't load within 15 seconds
-      loadingTimeout = setTimeout(() => {
-        if (!appLoaded) {
-          console.warn('Flutter app failed to load within timeout period');
-          showError();
-        }
-      }, 15000);
-    }
-
-    // Wait for Flutter app to be ready
-    function waitForFlutterApp() {
-      const checkInterval = setInterval(() => {
-        // Check if Flutter has initialized
-        if (window.flutterCanvasKit || window._flutter?.loader?.didCreateEngineInitializer) {
-          clearInterval(checkInterval);
-          clearTimeout(loadingTimeout);
+      hideLoadingShowApp() {
+        if (this.isAppLoaded) return;
+        
+        console.log('✅ PastorPro loaded successfully in', Date.now() - this.loadStartTime, 'ms');
+        this.isAppLoaded = true;
+        
+        clearTimeout(this.loadingTimeout);
+        
+        // Smooth transition to app
+        setTimeout(() => {
+          document.getElementById('loadingOverlay').classList.add('fade-out');
           
-          // Wait a bit more for the app to render
           setTimeout(() => {
-            hideLoadingShowApp();
-          }, 2000);
-        }
-      }, 100);
+            document.getElementById('webHeader').classList.add('visible');
+            document.getElementById('flutterApp').classList.add('visible');
+          }, 400);
+        }, 800);
+      }
 
-      // Also listen for DOM changes in case Flutter injects content
-      const observer = new MutationObserver((mutations) => {
-        mutations.forEach((mutation) => {
-          if (mutation.addedNodes.length > 0) {
-            // Check if Flutter has added canvas or other content
-            const hasFlutterContent = document.querySelector('flutter-view, canvas, flt-glass-pane');
-            if (hasFlutterContent && !appLoaded) {
-              clearTimeout(loadingTimeout);
-              observer.disconnect();
-              setTimeout(() => {
-                hideLoadingShowApp();
-              }, 1000);
+      showError() {
+        console.error('❌ Failed to load PastorPro Web App');
+        
+        document.getElementById('loadingOverlay').classList.add('fade-out');
+        document.getElementById('webHeader').classList.remove('visible');
+        document.getElementById('flutterApp').classList.remove('visible');
+        document.getElementById('errorScreen').style.display = 'flex';
+      }
+
+      setupLoadingTimeout() {
+        this.loadingTimeout = setTimeout(() => {
+          if (!this.isAppLoaded) {
+            console.warn('⚠️ Loading timeout reached');
+            this.showError();
+          }
+        }, 20000); // 20 second timeout
+      }
+
+      waitForFlutter() {
+        // Multiple detection strategies
+        const strategies = [
+          this.detectFlutterCanvas.bind(this),
+          this.detectFlutterElements.bind(this),
+          this.detectFlutterGlobal.bind(this)
+        ];
+
+        const checkInterval = setInterval(() => {
+          const detected = strategies.some(strategy => strategy());
+          
+          if (detected) {
+            clearInterval(checkInterval);
+            setTimeout(() => this.hideLoadingShowApp(), 1500);
+          }
+        }, 200);
+
+        // DOM mutation observer for Flutter elements
+        const observer = new MutationObserver((mutations) => {
+          mutations.forEach((mutation) => {
+            if (mutation.addedNodes.length > 0) {
+              const hasFlutterContent = Array.from(mutation.addedNodes).some(node => 
+                node.nodeType === 1 && (
+                  node.tagName === 'CANVAS' ||
+                  node.tagName === 'FLT-GLASS-PANE' ||
+                  node.className?.includes('flutter') ||
+                  node.querySelector?.('canvas, flt-glass-pane')
+                )
+              );
+              
+              if (hasFlutterContent && !this.isAppLoaded) {
+                observer.disconnect();
+                clearInterval(checkInterval);
+                setTimeout(() => this.hideLoadingShowApp(), 1000);
+              }
             }
+          });
+        });
+
+        observer.observe(document.body, {
+          childList: true,
+          subtree: true
+        });
+      }
+
+      detectFlutterCanvas() {
+        return document.querySelector('canvas, flt-glass-pane') !== null;
+      }
+
+      detectFlutterElements() {
+        return document.querySelector('[data-flutter], .flutter-view, flutter-view') !== null;
+      }
+
+      detectFlutterGlobal() {
+        return window.flutterCanvasKit || 
+               (window._flutter && window._flutter.loader) ||
+               document.body.children.length > 4; // Flutter typically adds multiple elements
+      }
+
+      setupErrorHandling() {
+        window.addEventListener('error', (event) => {
+          console.error('🚨 JavaScript error:', event.error);
+          if (!this.isAppLoaded && this.retryCount < this.maxRetries) {
+            this.retryCount++;
+            console.log(`🔄 Retrying... (${this.retryCount}/${this.maxRetries})`);
+            setTimeout(() => location.reload(), 2000);
+          } else if (!this.isAppLoaded) {
+            this.showError();
           }
         });
-      });
 
-      observer.observe(document.body, {
-        childList: true,
-        subtree: true
-      });
+        window.addEventListener('unhandledrejection', (event) => {
+          console.error('🚨 Unhandled promise rejection:', event.reason);
+        });
+      }
+
+      handleVisibilityChange() {
+        document.addEventListener('visibilitychange', () => {
+          if (document.visibilityState === 'visible' && !this.isAppLoaded) {
+            console.log('🔄 Page became visible, checking app status...');
+            this.waitForFlutter();
+          }
+        });
+      }
     }
 
-    // Page load handler
-    window.addEventListener('load', () => {
-      initLoadingTimeout();
-      waitForFlutterApp();
-      
-      // Additional fallback - hide loading after 10 seconds regardless
-      setTimeout(() => {
-        if (!appLoaded) {
-          hideLoadingShowApp();
-        }
-      }, 10000);
-    });
+    // Initialize the web app when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => new PastorProWebApp());
+    } else {
+      new PastorProWebApp();
+    }
 
-    // Error handling
-    window.addEventListener('error', (event) => {
-      console.error('Web app error:', event.error);
-      if (!appLoaded) {
-        clearTimeout(loadingTimeout);
-        showError();
+    // Fallback initialization
+    window.addEventListener('load', () => {
+      if (!window.pastorProApp) {
+        window.pastorProApp = new PastorProWebApp();
       }
     });
 
-    // Handle Flutter app readiness
+    // Flutter app readiness override
     if (window._flutter && window._flutter.loader) {
       window._flutter.loader.loadEntrypoint({
         onEntrypointLoaded: function(engineInitializer) {
+          console.log('🎯 Flutter entrypoint loaded');
           engineInitializer.initializeEngine().then(function(appRunner) {
+            console.log('🔧 Flutter engine initialized');
             appRunner.runApp().then(function() {
+              console.log('🎉 Flutter app started');
               setTimeout(() => {
-                hideLoadingShowApp();
-              }, 1500);
+                if (window.pastorProApp && !window.pastorProApp.isAppLoaded) {
+                  window.pastorProApp.hideLoadingShowApp();
+                }
+              }, 1000);
             });
           });
         }
       });
     }
-
-    // Mobile viewport handling
-    function handleViewport() {
-      if (window.innerWidth <= 768) {
-        document.querySelector('meta[name="viewport"]').setAttribute('content', 
-          'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
-      }
-    }
-
-    window.addEventListener('resize', handleViewport);
-    handleViewport();
   </script>
 </body>
 </html>

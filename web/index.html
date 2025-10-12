@@ -1,38 +1,491 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
   <base href="./">
-
+  
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="Pastor Report - A comprehensive app for pastors to submit monthly reports, manage activities, and track ministry progress across different departments and missions.">
-
+  <meta name="description" content="PastorPro Web App - A comprehensive ministry management tool for pastors to submit monthly reports, manage activities, and track ministry progress across different departments and missions.">
+  
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Pastor Report">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="PastorPro">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
+  
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
-
-  <title>Pastor Report - Ministry Management App</title>
+  
+  <title>PastorPro - Ministry Management Web App</title>
   <link rel="manifest" href="manifest.json">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --primary: #4a6bff;
+      --primary-light: #7187ff;
+      --primary-dark: #2845cc;
+      --secondary: #9b6dd1;
+      --text-dark: #212340;
+      --text-light: #444;
+      --dark-bg: #1a1a2e;
+      --dark-bg-light: #212340;
+      --light-bg: #f8f9fa;
+      --white: #fff;
+      --transition: all 0.3s ease-out;
+      --shadow-md: 0 5px 20px rgba(0,0,0,0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Loading Screen */
+    .loading-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease-out;
+    }
+
+    .loading-container.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .app-logo {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 2rem;
+      border-radius: 20px;
+      box-shadow: var(--shadow-md);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .app-title {
+      color: var(--white);
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .app-subtitle {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    /* Loading Animation */
+    .loading-spinner {
+      width: 60px;
+      height: 60px;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-top: 4px solid var(--white);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 1.5rem;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .loading-text {
+      color: var(--white);
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .loading-progress {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.9rem;
+    }
+
+    /* Web App Header */
+    .web-app-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 70px;
+      background: var(--dark-bg-light);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.5s ease-out;
+    }
+
+    .web-app-header.visible {
+      opacity: 1;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .header-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+    }
+
+    .header-title {
+      color: var(--white);
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .header-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--white);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .header-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /* Flutter App Container */
+    .flutter-container {
+      position: absolute;
+      top: 70px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      transition: opacity 0.5s ease-out;
+    }
+
+    .flutter-container.visible {
+      opacity: 1;
+    }
+
+    /* Error State */
+    .error-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--dark-bg);
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9998;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .error-icon {
+      font-size: 4rem;
+      color: #ff6b6b;
+      margin-bottom: 2rem;
+    }
+
+    .error-title {
+      color: var(--white);
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .error-message {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .retry-btn {
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .retry-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .web-app-header {
+        padding: 0 1rem;
+      }
+
+      .app-title {
+        font-size: 2rem;
+      }
+
+      .app-subtitle {
+        font-size: 1rem;
+      }
+
+      .header-title {
+        font-size: 1.2rem;
+      }
+
+      .header-right {
+        gap: 0.5rem;
+      }
+
+      .header-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+      }
+    }
+
+    /* Flutter Loading Override */
+    .loading {
+      display: none;
+    }
+  </style>
 </head>
 <body>
+  <!-- Loading Screen -->
+  <div id="loadingContainer" class="loading-container">
+    <img src="favicon.png" alt="PastorPro Logo" class="app-logo" onerror="this.style.display='none'">
+    <h1 class="app-title">PastorPro</h1>
+    <p class="app-subtitle">Ministry Management Web App</p>
+    <div class="loading-spinner"></div>
+    <div class="loading-text">Loading your ministry tools...</div>
+    <div class="loading-progress">Please wait while we prepare your dashboard</div>
+  </div>
+
+  <!-- Web App Header -->
+  <header id="webAppHeader" class="web-app-header">
+    <div class="header-left">
+      <img src="favicon.png" alt="PastorPro" class="header-logo" onerror="this.style.display='none'">
+      <span class="header-title">PastorPro Web</span>
+    </div>
+    <div class="header-right">
+      <a href="../index.html" class="header-btn">
+        <i class="fas fa-home"></i> Back to Website
+      </a>
+      <a href="../download.html" class="header-btn">
+        <i class="fas fa-download"></i> Download App
+      </a>
+    </div>
+  </header>
+
+  <!-- Flutter App Container -->
+  <div id="flutterContainer" class="flutter-container">
+    <!-- Flutter app will load here -->
+  </div>
+
+  <!-- Error State -->
+  <div id="errorContainer" class="error-container">
+    <i class="fas fa-exclamation-triangle error-icon"></i>
+    <h2 class="error-title">Unable to Load PastorPro</h2>
+    <p class="error-message">
+      We're having trouble loading the web application. This might be due to your browser compatibility 
+      or network connectivity. Please try refreshing the page or downloading our mobile app instead.
+    </p>
+    <a href="#" class="retry-btn" onclick="location.reload()">
+      <i class="fas fa-redo"></i> Try Again
+    </a>
+    <br><br>
+    <a href="../download.html" class="retry-btn" style="background: var(--secondary);">
+      <i class="fas fa-mobile-alt"></i> Download Mobile App
+    </a>
+  </div>
+
+  <!-- Flutter Bootstrap Script -->
   <script src="flutter_bootstrap.js" async></script>
+  
+  <!-- Custom Web App Script -->
+  <script>
+    // Loading management
+    let loadingTimeout;
+    let appLoaded = false;
+
+    // Show loading screen
+    function showLoading() {
+      document.getElementById('loadingContainer').classList.remove('hidden');
+      document.getElementById('webAppHeader').classList.remove('visible');
+      document.getElementById('flutterContainer').classList.remove('visible');
+      document.getElementById('errorContainer').style.display = 'none';
+    }
+
+    // Hide loading screen and show app
+    function hideLoadingShowApp() {
+      if (appLoaded) return;
+      appLoaded = true;
+      
+      setTimeout(() => {
+        document.getElementById('loadingContainer').classList.add('hidden');
+        document.getElementById('webAppHeader').classList.add('visible');
+        document.getElementById('flutterContainer').classList.add('visible');
+      }, 500);
+    }
+
+    // Show error state
+    function showError() {
+      document.getElementById('loadingContainer').classList.add('hidden');
+      document.getElementById('webAppHeader').classList.remove('visible');
+      document.getElementById('flutterContainer').classList.remove('visible');
+      document.getElementById('errorContainer').style.display = 'flex';
+    }
+
+    // Initialize loading timeout
+    function initLoadingTimeout() {
+      // Set a timeout to show error if app doesn't load within 15 seconds
+      loadingTimeout = setTimeout(() => {
+        if (!appLoaded) {
+          console.warn('Flutter app failed to load within timeout period');
+          showError();
+        }
+      }, 15000);
+    }
+
+    // Wait for Flutter app to be ready
+    function waitForFlutterApp() {
+      const checkInterval = setInterval(() => {
+        // Check if Flutter has initialized
+        if (window.flutterCanvasKit || window._flutter?.loader?.didCreateEngineInitializer) {
+          clearInterval(checkInterval);
+          clearTimeout(loadingTimeout);
+          
+          // Wait a bit more for the app to render
+          setTimeout(() => {
+            hideLoadingShowApp();
+          }, 2000);
+        }
+      }, 100);
+
+      // Also listen for DOM changes in case Flutter injects content
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          if (mutation.addedNodes.length > 0) {
+            // Check if Flutter has added canvas or other content
+            const hasFlutterContent = document.querySelector('flutter-view, canvas, flt-glass-pane');
+            if (hasFlutterContent && !appLoaded) {
+              clearTimeout(loadingTimeout);
+              observer.disconnect();
+              setTimeout(() => {
+                hideLoadingShowApp();
+              }, 1000);
+            }
+          }
+        });
+      });
+
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+    }
+
+    // Page load handler
+    window.addEventListener('load', () => {
+      initLoadingTimeout();
+      waitForFlutterApp();
+      
+      // Additional fallback - hide loading after 10 seconds regardless
+      setTimeout(() => {
+        if (!appLoaded) {
+          hideLoadingShowApp();
+        }
+      }, 10000);
+    });
+
+    // Error handling
+    window.addEventListener('error', (event) => {
+      console.error('Web app error:', event.error);
+      if (!appLoaded) {
+        clearTimeout(loadingTimeout);
+        showError();
+      }
+    });
+
+    // Handle Flutter app readiness
+    if (window._flutter && window._flutter.loader) {
+      window._flutter.loader.loadEntrypoint({
+        onEntrypointLoaded: function(engineInitializer) {
+          engineInitializer.initializeEngine().then(function(appRunner) {
+            appRunner.runApp().then(function() {
+              setTimeout(() => {
+                hideLoadingShowApp();
+              }, 1500);
+            });
+          });
+        }
+      });
+    }
+
+    // Mobile viewport handling
+    function handleViewport() {
+      if (window.innerWidth <= 768) {
+        document.querySelector('meta[name="viewport"]').setAttribute('content', 
+          'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+      }
+    }
+
+    window.addEventListener('resize', handleViewport);
+    handleViewport();
+  </script>
 </body>
 </html>

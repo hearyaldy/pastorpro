@@ -328,19 +328,149 @@
     .flutter-app {
       position: absolute;
       top: 80px;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 420px;
+      height: calc(100vh - 100px);
+      max-height: 800px;
       opacity: 0;
       transition: opacity 0.6s ease-out;
       background: var(--white);
-      border-radius: 16px 16px 0 0;
+      border-radius: 24px;
       overflow: hidden;
-      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 8px 20px rgba(0, 0, 0, 0.2);
+      border: 8px solid #2a2a3a;
+      margin: 20px auto;
+      position: relative;
+    }
+
+    .flutter-app::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+      height: 25px;
+      background: #2a2a3a;
+      border-radius: 0 0 15px 15px;
+      z-index: 10;
+    }
+
+    .flutter-app::after {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 8px;
+      background: #444;
+      border-radius: 50%;
+      z-index: 11;
     }
 
     .flutter-app.visible {
       opacity: 1;
+    }
+
+    .mobile-frame {
+      width: 100%;
+      height: 100%;
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Mobile device styling for larger screens */
+    @media (min-width: 769px) {
+      .flutter-app {
+        max-width: 380px;
+        max-height: 720px;
+        border: 12px solid #1a1a1a;
+        border-radius: 28px;
+        box-shadow: 
+          0 0 0 2px #333,
+          0 25px 80px rgba(0, 0, 0, 0.4),
+          0 12px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .flutter-app::before {
+        width: 120px;
+        height: 20px;
+        top: -12px;
+        border-radius: 0 0 12px 12px;
+        background: #1a1a1a;
+      }
+
+      .flutter-app::after {
+        top: 4px;
+        width: 6px;
+        height: 6px;
+        background: #555;
+      }
+
+      .mobile-frame {
+        border-radius: 16px;
+      }
+
+      body {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+        background-attachment: fixed;
+      }
+
+      /* Add device reflection effect */
+      .flutter-app {
+        position: relative;
+      }
+
+      .flutter-app::after {
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      }
+    }
+
+    /* Tablet view */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .flutter-app {
+        max-width: 420px;
+        max-height: 760px;
+      }
+    }
+
+    /* Desktop view - phone-like appearance */
+    @media (min-width: 1025px) {
+      .flutter-app {
+        max-width: 360px;
+        max-height: 680px;
+        border-width: 16px;
+        border-radius: 32px;
+      }
+
+      .flutter-app::before {
+        width: 100px;
+        height: 18px;
+        top: -16px;
+      }
+
+      /* Add stand effect for desktop */
+      .flutter-app {
+        margin-top: 40px;
+      }
+
+      .flutter-app::after {
+        content: '';
+        position: absolute;
+        bottom: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200px;
+        height: 8px;
+        background: radial-gradient(ellipse, rgba(0, 0, 0, 0.2) 0%, transparent 70%);
+        border-radius: 50%;
+        z-index: -1;
+      }
     }
 
     /* Enhanced Error State */
@@ -436,6 +566,32 @@
 
       .flutter-app {
         top: 70px;
+        left: 10px;
+        right: 10px;
+        transform: none;
+        max-width: none;
+        width: calc(100% - 20px);
+        height: calc(100vh - 90px);
+        border-width: 4px;
+        border-radius: 16px;
+        margin: 10px auto;
+      }
+
+      .flutter-app::before {
+        width: 80px;
+        height: 16px;
+        top: -4px;
+        border-radius: 0 0 8px 8px;
+      }
+
+      .flutter-app::after {
+        top: 2px;
+        width: 4px;
+        height: 4px;
+      }
+
+      .mobile-frame {
+        border-radius: 12px;
       }
 
       .header-title {
@@ -473,6 +629,31 @@
     @media (max-width: 480px) {
       .web-header {
         padding: 0 1rem;
+      }
+
+      .flutter-app {
+        left: 5px;
+        right: 5px;
+        width: calc(100% - 10px);
+        border-width: 2px;
+        border-radius: 12px;
+      }
+
+      .flutter-app::before {
+        width: 60px;
+        height: 12px;
+        top: -2px;
+        border-radius: 0 0 6px 6px;
+      }
+
+      .flutter-app::after {
+        top: 1px;
+        width: 3px;
+        height: 3px;
+      }
+
+      .mobile-frame {
+        border-radius: 10px;
       }
 
       .header-nav {
@@ -553,7 +734,9 @@
 
   <!-- Flutter App Container -->
   <main id="flutterApp" class="flutter-app">
-    <!-- Flutter content will be injected here -->
+    <div class="mobile-frame">
+      <!-- Flutter content will be injected here -->
+    </div>
   </main>
 
   <!-- Enhanced Error Screen -->

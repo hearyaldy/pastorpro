@@ -137991,9 +137991,10 @@ s=1
 break
 case 1:return A.n(q,r)}})
 return A.o($async$Ub,r)},
-aa3(a,b){var s=this.c,r=a.d
+aa3(a,b){var s=this.c,r=a.d,q
 s.toString
-v.G.window.location.href=r},
+q=v.G.window.open(r,"_blank","noopener")
+if(q==null)v.G.window.location.href=r},
 vh(a){return this.aEA(a)},
 aEA(a){var s=0,r=A.p(t._P),q,p,o,n,m,l,k,j,i,h,g
 var $async$vh=A.l(function(b,c){if(b===1)return A.m(c,r)
@@ -139124,9 +139125,10 @@ s=1
 break
 case 1:return A.n(q,r)}})
 return A.o($async$Uj,r)},
-a6E(a,b){var s,r=this.c
+a6E(a,b){var s,r=this.c,q
 r.toString
-v.G.window.location.href=a.d},
+q=v.G.window.open(a.d,"_blank","noopener")
+if(q==null)v.G.window.location.href=a.d},
 G(a){var s=this,r=null,q=A.bz(a,!1,t.d).b,p=q==null?r:q.e
 q=t.p
 return A.dw(r,r,new A.f_(A.kv(A.jn(r,B.w,r,B.S,B.bs,r,r,r,!1,r,B.af,A.a([s.aBm(p),new A.du(new A.V(B.W,A.B(A.a([s.aBn(),B.ah,s.aBo()],q),B.o,r,B.m,B.n,0,B.t),r),r),s.aBl(p)],q)),new A.b3c(s)),900,r),r,r)},

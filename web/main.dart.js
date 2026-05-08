@@ -137992,7 +137992,7 @@ case 1:return A.n(q,r)}})
 return A.o($async$Ub,r)},
 aa3(a,b){var s=this.c,r=a.d
 s.toString
-v.G.window.open(r,"_blank","noopener")},
+v.G.window.location.href=r},
 vh(a){return this.aEA(a)},
 aEA(a){var s=0,r=A.p(t._P),q,p,o,n,m,l,k,j,i,h,g
 var $async$vh=A.l(function(b,c){if(b===1)return A.m(c,r)

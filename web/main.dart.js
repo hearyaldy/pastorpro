@@ -137990,11 +137990,9 @@ s=1
 break
 case 1:return A.n(q,r)}})
 return A.o($async$Ub,r)},
-aa3(a,b){var s,r=this.c
-r.toString
-s=t.N
-s=A.Q(["url",a.d,"departmentName",a.b],s,s)
-A.P(r,!1).cK("/inapp_webview",s,t.X)},
+aa3(a,b){var s=this.c,r=a.d
+s.toString
+v.G.window.open(r,"_blank","noopener")},
 vh(a){return this.aEA(a)},
 aEA(a){var s=0,r=A.p(t._P),q,p,o,n,m,l,k,j,i,h,g
 var $async$vh=A.l(function(b,c){if(b===1)return A.m(c,r)

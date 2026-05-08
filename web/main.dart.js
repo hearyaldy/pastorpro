@@ -139126,8 +139126,7 @@ case 1:return A.n(q,r)}})
 return A.o($async$Uj,r)},
 a6E(a,b){var s,r=this.c
 r.toString
-s=A.hv(new A.b37(a,b),null,t.z)
-A.P(r,!1).dK(s)},
+v.G.window.location.href=a.d},
 G(a){var s=this,r=null,q=A.bz(a,!1,t.d).b,p=q==null?r:q.e
 q=t.p
 return A.dw(r,r,new A.f_(A.kv(A.jn(r,B.w,r,B.S,B.bs,r,r,r,!1,r,B.af,A.a([s.aBm(p),new A.du(new A.V(B.W,A.B(A.a([s.aBn(),B.ah,s.aBo()],q),B.o,r,B.m,B.n,0,B.t),r),r),s.aBl(p)],q)),new A.b3c(s)),900,r),r,r)},
